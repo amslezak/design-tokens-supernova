@@ -1,0 +1,27 @@
+{
+  "name": "design-tokens-supernova",
+  "version": "1.0.0",
+  "description": "Design token pipeline: Figma → Supernova → Style Dictionary",
+  "main": "index.js",
+  "scripts": {
+    "build": "style-dictionary build",
+    "build:watch": "style-dictionary build --watch",
+    "clean": "rm -rf build",
+    "dev": "npm run build:watch"
+  },
+  "keywords": [
+    "design-tokens",
+    "figma",
+    "supernova",
+    "style-dictionary",
+    "design-system"
+  ],
+  "author": "NYU Langone Health",
+  "license": "MIT",
+  "devDependencies": {
+    "style-dictionary": "^5.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
