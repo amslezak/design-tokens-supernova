@@ -1040,11 +1040,11 @@
           },
           "surface": {
             "dark": {
-              "value": "{nyulh.color.core.color.slate.950}",
+              "value": "{nyulh.color.core.color.slate.50}",
               "type": "color"
             },
             "white": {
-              "value": "{nyulh.color.core.color.slate.300}",
+              "value": "{nyulh.color.core.color.slate.950}",
               "type": "color"
             }
           }
