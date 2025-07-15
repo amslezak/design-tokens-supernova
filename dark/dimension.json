@@ -1,7 +1,7 @@
 {
   "_comment": "This file was generated automatically by Supernova.io and should not be changed manually. To modify the format or content of this file, please contact your design system team.",
   "nyulh": {
-    "dimension": {
+    "number": {
       "0": {
         "value": "0px",
         "type": "dimension"
@@ -132,10 +132,6 @@
       },
       "99999999": {
         "value": "100000000px",
-        "type": "dimension"
-      },
-      "radius": {
-        "value": "0px",
         "type": "dimension"
       },
       "0_1": {
@@ -270,41 +266,61 @@
         "value": "100000000px",
         "type": "dimension"
       },
-      "radius_1": {
-        "value": "0px",
-        "type": "dimension"
+      "layout": {
+        "lg": {
+          "value": "{nyulh.number.0}",
+          "type": "dimension"
+        },
+        "lg_1": {
+          "value": "{nyulh.number.0_1}",
+          "type": "dimension"
+        }
       },
-      "lg": {
-        "value": "{nyulh.dimension.0}",
-        "type": "dimension"
+      "spacing": {
+        "lg": {
+          "value": "{nyulh.number.1}",
+          "type": "dimension"
+        },
+        "lg_1": {
+          "value": "{nyulh.number.1_1}",
+          "type": "dimension"
+        }
       },
-      "lg_1": {
-        "value": "{nyulh.dimension.1}",
-        "type": "dimension"
+      "typography": {
+        "size": {
+          "xl": {
+            "value": "{nyulh.number.0}",
+            "type": "dimension"
+          },
+          "xl_1": {
+            "value": "{nyulh.number.0_1}",
+            "type": "dimension"
+          }
+        }
       },
-      "xl": {
-        "value": "{nyulh.dimension.0}",
-        "type": "dimension"
-      },
-      "lg_2": {
-        "value": "{nyulh.dimension.0}",
-        "type": "dimension"
-      },
-      "lg_3": {
-        "value": "{nyulh.dimension.0_1}",
-        "type": "dimension"
-      },
-      "lg_4": {
-        "value": "{nyulh.dimension.1_1}",
-        "type": "dimension"
-      },
-      "xl_1": {
-        "value": "{nyulh.dimension.0_1}",
-        "type": "dimension"
-      },
-      "lg_5": {
-        "value": "{nyulh.dimension.0_1}",
-        "type": "dimension"
+      "radius": {
+        "lg": {
+          "value": "{nyulh.number.0}",
+          "type": "dimension"
+        },
+        "lg_1": {
+          "value": "{nyulh.number.0_1}",
+          "type": "dimension"
+        }
+      }
+    },
+    "color": {
+      "button": {
+        "primary": {
+          "radius": {
+            "value": "0px",
+            "type": "dimension"
+          },
+          "radius_1": {
+            "value": "0px",
+            "type": "dimension"
+          }
+        }
       }
     }
   }
