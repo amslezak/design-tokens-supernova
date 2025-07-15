@@ -1,0 +1,54 @@
+{
+  "source": ["base/**/*.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "build/scss/",
+      "files": [{
+        "destination": "_variables.scss",
+        "format": "scss/variables",
+        "options": {
+          "outputReferences": true
+        }
+      }]
+    },
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "build/css/",
+      "files": [{
+        "destination": "variables.css",
+        "format": "css/variables",
+        "options": {
+          "outputReferences": true
+        }
+      }]
+    },
+    "js": {
+      "transformGroup": "js",
+      "buildPath": "build/js/",
+      "files": [{
+        "destination": "tokens.js",
+        "format": "javascript/es6"
+      }]
+    },
+    "json": {
+      "transformGroup": "js",
+      "buildPath": "build/json/",
+      "files": [{
+        "destination": "tokens.json",
+        "format": "json/flat"
+      }]
+    },
+    "react": {
+      "transformGroup": "js",
+      "buildPath": "build/react/",
+      "files": [{
+        "destination": "tokens.js",
+        "format": "javascript/es6",
+        "options": {
+          "outputReferences": true
+        }
+      }]
+    }
+  }
+}

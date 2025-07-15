@@ -1,0 +1,147 @@
+name: Build Design Tokens
+
+on:
+  # Trigger on push to main branch
+  push:
+    branches: [ main ]
+    paths:
+      - 'base/**/*.json'
+      - 'config.json'
+      - 'package.json'
+      - 'package-lock.json'
+  
+  # Trigger on pull requests targeting main
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'base/**/*.json'
+      - 'config.json'
+      - 'package.json'
+      - 'package-lock.json'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  build-tokens:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Need full history for git operations
+          fetch-depth: 0
+          # Use GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Clean build directory
+        run: npm run clean
+
+      - name: Build design tokens
+        run: npm run build
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain build/) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in build/ directory"
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+            echo "No changes in build/ directory"
+          fi
+
+      - name: Configure Git
+        if: steps.changes.outputs.changes == 'true' && github.event_name == 'push'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.changes == 'true' && github.event_name == 'push'
+        run: |
+          git add build/
+          git commit -m "🤖 Auto-build design tokens
+
+          Generated from Supernova exports:
+          - CSS custom properties: build/css/variables.css
+          - SCSS variables: build/scss/_variables.scss  
+          - JavaScript exports: build/js/tokens.js
+          - React tokens: build/react/tokens.js
+          - JSON flat: build/json/tokens.json
+          
+          Triggered by: ${{ github.event.head_commit.message }}"
+          git push
+
+      - name: Create GitHub Release
+        if: steps.changes.outputs.changes == 'true' && github.event_name == 'push'
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: tokens-${{ github.run_number }}
+          release_name: Design Tokens Release ${{ github.run_number }}
+          body: |
+            🎨 **Design Tokens Updated**
+            
+            This release contains the latest design tokens generated from Figma via Supernova.
+            
+            **Generated Files:**
+            - `build/css/variables.css` - CSS custom properties
+            - `build/scss/_variables.scss` - SCSS variables
+            - `build/js/tokens.js` - JavaScript ES6 exports
+            - `build/react/tokens.js` - React-compatible tokens
+            - `build/json/tokens.json` - JSON flat format
+            
+            **Usage:**
+            ```bash
+            npm install https://github.com/amslezak/design-tokens-supernova/releases/download/tokens-${{ github.run_number }}/tokens.tar.gz
+            ```
+            
+            **Commit:** ${{ github.sha }}
+            **Triggered by:** ${{ github.event.head_commit.message }}
+          draft: false
+          prerelease: false
+
+      - name: Upload token artifacts
+        if: steps.changes.outputs.changes == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-tokens-build-${{ github.run_number }}
+          path: |
+            build/
+            config.json
+            package.json
+          retention-days: 30
+
+      - name: Display build summary
+        run: |
+          echo "## 🎨 Design Tokens Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Build Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Generated Files:**" >> $GITHUB_STEP_SUMMARY
+          echo "- CSS Custom Properties: \`build/css/variables.css\`" >> $GITHUB_STEP_SUMMARY
+          echo "- SCSS Variables: \`build/scss/_variables.scss\`" >> $GITHUB_STEP_SUMMARY
+          echo "- JavaScript Exports: \`build/js/tokens.js\`" >> $GITHUB_STEP_SUMMARY
+          echo "- React Tokens: \`build/react/tokens.js\`" >> $GITHUB_STEP_SUMMARY
+          echo "- JSON Format: \`build/json/tokens.json\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ steps.changes.outputs.changes }}" == "true" ]]; then
+            echo "**Changes:** ✅ Token files updated" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Changes:** ℹ️ No token changes detected" >> $GITHUB_STEP_SUMMARY
+          fi
