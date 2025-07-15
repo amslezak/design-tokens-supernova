@@ -1169,6 +1169,10 @@
         }
       },
       "padding": {
+        "padding-andy-test": {
+          "value": "333px",
+          "type": "dimension"
+        },
         "padding-horizontal-card": {
           "value": "{dimension.number.base.8_1}",
           "type": "dimension"
