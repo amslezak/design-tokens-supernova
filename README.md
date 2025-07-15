@@ -70,6 +70,43 @@ The build process generates tokens in multiple formats:
 
 Design tokens are automatically updated from Figma through Supernova's official export process. The `/base/` folder contains the official token definitions that should not be modified manually.
 
+## GitHub Actions Automation
+
+This repository uses GitHub Actions to automatically build and deploy design tokens:
+
+- **Automatic builds** when PRs are merged to main
+- **Auto-commits** built token files back to repository
+- **GitHub releases** created for each token update
+- **Artifact uploads** for easy access to build files
+
+See [GITHUB_ACTIONS.md](./GITHUB_ACTIONS.md) for detailed documentation.
+
+### Workflow Triggers
+
+- Push to `main` branch → Builds and commits tokens
+- Pull requests to `main` → Validates builds without committing
+- Manual dispatch → Can be triggered from GitHub Actions tab
+
+### Usage in Projects
+
+```scss
+// SCSS
+@import 'path/to/build/scss/variables';
+.component { color: $color-color-primary-purple; }
+```
+
+```js
+// JavaScript/React
+import { ColorColorPrimaryPurple } from './build/js/tokens';
+const styles = { color: ColorColorPrimaryPurple };
+```
+
+```css
+/* CSS Custom Properties */
+@import 'path/to/build/css/variables.css';
+.component { color: var(--color-color-primary-purple); }
+```
+
 ## Requirements
 
 - Node.js 16+
