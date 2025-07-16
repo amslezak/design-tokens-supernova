@@ -321,6 +321,12 @@
             "type": "dimension"
           }
         }
+      },
+      "slate": {
+        "andy-test": {
+          "value": "111px",
+          "type": "dimension"
+        }
       }
     }
   }

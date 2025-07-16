@@ -2018,11 +2018,11 @@
       },
       "surface": {
         "dark": {
-          "value": "{nyulh.color.slate.50}",
+          "value": "{nyulh.color.slate.950}",
           "type": "color"
         },
         "white": {
-          "value": "{nyulh.color.slate.950}",
+          "value": "{nyulh.color.slate.300}",
           "type": "color"
         },
         "dark_1": {
