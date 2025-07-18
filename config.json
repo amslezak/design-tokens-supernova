@@ -1,5 +1,5 @@
 {
-  "source": ["archive/tokens.json"],
+  "source": ["base/**/*.json", "light/**/*.json", "dark/**/*.json"],
   "platforms": {
     "scss": {
       "transformGroup": "scss",
