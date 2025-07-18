@@ -1927,7 +1927,7 @@
             "type": "color"
           },
           "500": {
-            "value": "#ff6347",
+            "value": "#ad46ff",
             "type": "color"
           },
           "600": {
@@ -2112,6 +2112,14 @@
             "value": "{nyulh.core.color.slate.300}",
             "type": "color"
           }
+        }
+      }
+    },
+    "component": {
+      "color": {
+        "button": {
+          "value": "{nyulh.core.color.purple.500}",
+          "type": "color"
         }
       }
     }
