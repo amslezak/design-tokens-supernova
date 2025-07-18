@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma → Supernova → Style Dictionary Token Demo</title>
+    
+    <!-- Load design tokens -->
+    <link rel="stylesheet" href="build/tokens-light.css">
+    <link rel="stylesheet" href="build/tokens-dark.css">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .demo-container {
+            background: white;
+            border-radius: 24px;
+            padding: 4rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .demo-subtitle {
+            font-size: 1.5rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        /* The star of the show - our demo button */
+        .demo-button {
+            background-color: var(--nyulh-color-purple-500, #5E2E84);
+            color: white;
+            border: none;
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(94, 46, 132, 0.3);
+            margin-bottom: 2rem;
+            min-width: 300px;
+            display: inline-block;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(94, 46, 132, 0.4);
+        }
+        
+        .demo-button:active {
+            transform: translateY(0);
+        }
+        
+        /* Token display */
+        .token-display {
+            background: #f1f5f9;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+        
+        .token-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+        
+        .token-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .token-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .token-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+            margin-bottom: 0.5rem;
+        }
+        
+        .token-value {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1e293b;
+            background: #f8fafc;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #e2e8f0;
+            word-break: break-all;
+        }
+        
+        .color-swatch {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid #e2e8f0;
+            display: inline-block;
+            margin-left: 1rem;
+            vertical-align: middle;
+            background-color: var(--nyulh-color-purple-500, #5E2E84);
+        }
+        
+        .flow-indicator {
+            margin: 2rem 0;
+            font-size: 1.125rem;
+            color: #64748b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .flow-step {
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            font-weight: 500;
+            color: #334155;
+        }
+        
+        .flow-arrow {
+            font-size: 1.5rem;
+            color: #6366f1;
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: #fef3c7;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        
+        .instructions-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #92400e;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .instructions-content {
+            color: #92400e;
+            line-height: 1.5;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            .demo-title {
+                font-size: 2rem;
+            }
+            
+            .demo-subtitle {
+                font-size: 1.25rem;
+            }
+            
+            .demo-button {
+                padding: 1rem 2rem;
+                font-size: 1.25rem;
+                min-width: 250px;
+            }
+            
+            .token-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .flow-indicator {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        /* Animation for token value changes */
+        .token-value.updating {
+            animation: tokenUpdate 0.5s ease-in-out;
+        }
+        
+        @keyframes tokenUpdate {
+            0% { background-color: #fef3c7; }
+            50% { background-color: #f59e0b; color: white; }
+            100% { background-color: #f8fafc; }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 class="demo-title">Design Token Live Demo</h1>
+        <p class="demo-subtitle">Watch this button change when Figma tokens are updated</p>
+        
+        <!-- The demo button that will change -->
+        <button class="demo-button" id="demoButton">
+            🎨 Primary Action Button
+        </button>
+        
+        <!-- Flow indicator -->
+        <div class="flow-indicator">
+            <div class="flow-step">Figma</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">Supernova</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">GitHub</div>
+            <div class="flow-arrow">→</div>
+            <div class="flow-step">This Button</div>
+        </div>
+        
+        <!-- Token display -->
+        <div class="token-display">
+            <div class="token-title">🔍 Current Token Values</div>
+            <div class="token-info">
+                <div class="token-item">
+                    <div class="token-label">Token Name</div>
+                    <div class="token-value" id="tokenName">--nyulh-color-purple-500</div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Current Value</div>
+                    <div class="token-value" id="tokenValue">#5E2E84</div>
+                    <div class="color-swatch" id="colorSwatch"></div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Source File</div>
+                    <div class="token-value">build/tokens-light.css</div>
+                </div>
+                <div class="token-item">
+                    <div class="token-label">Last Updated</div>
+                    <div class="token-value" id="lastUpdated">Ready for demo</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions for the demo -->
+        <div class="instructions">
+            <div class="instructions-title">
+                📋 Demo Instructions
+            </div>
+            <div class="instructions-content">
+                <strong>For Loom Recording:</strong><br>
+                1. Change the purple-500 token value in Figma<br>
+                2. Sync/export from Supernova to GitHub<br>
+                3. Wait for GitHub Actions to build new tokens<br>
+                4. Refresh this page to see the button color change<br>
+                5. The token value display will update automatically
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get computed CSS custom property value
+        function getCurrentTokenValue() {
+            const styles = getComputedStyle(document.documentElement);
+            const value = styles.getPropertyValue('--nyulh-color-purple-500').trim();
+            return value || '#5E2E84'; // fallback
+        }
+        
+        // Update token display
+        function updateTokenDisplay() {
+            const currentValue = getCurrentTokenValue();
+            const tokenValueElement = document.getElementById('tokenValue');
+            const colorSwatchElement = document.getElementById('colorSwatch');
+            const lastUpdatedElement = document.getElementById('lastUpdated');
+            
+            // Update value display
+            if (tokenValueElement.textContent !== currentValue) {
+                tokenValueElement.textContent = currentValue;
+                tokenValueElement.classList.add('updating');
+                setTimeout(() => {
+                    tokenValueElement.classList.remove('updating');
+                }, 500);
+            }
+            
+            // Update color swatch
+            colorSwatchElement.style.backgroundColor = currentValue;
+            
+            // Update timestamp
+            lastUpdatedElement.textContent = new Date().toLocaleTimeString();
+        }
+        
+        // Simulate token refresh (for demo purposes)
+        function simulateTokenRefresh() {
+            console.log('🔄 Checking for token updates...');
+            updateTokenDisplay();
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTokenDisplay();
+            
+            // Check for updates every 5 seconds during demo
+            setInterval(simulateTokenRefresh, 5000);
+            
+            // Manual refresh button functionality
+            document.getElementById('demoButton').addEventListener('click', function() {
+                simulateTokenRefresh();
+                
+                // Visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 150);
+            });
+            
+            console.log('✅ Figma Token Demo initialized');
+            console.log('Current token value:', getCurrentTokenValue());
+        });
+        
+        // Add keyboard shortcut for manual refresh (R key)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'r' || e.key === 'R') {
+                e.preventDefault();
+                simulateTokenRefresh();
+                console.log('🔄 Manual token refresh triggered');
+            }
+        });
+    </script>
+</body>
+</html>
