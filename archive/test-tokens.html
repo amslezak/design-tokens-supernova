@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NYU Langone Health Design Tokens Test</title>
+    
+    <!-- Design Token CSS Files -->
+    <link rel="stylesheet" href="build/tokens-light.css">
+    <link rel="stylesheet" href="build/tokens-dark.css">
+    <link rel="stylesheet" href="build/tokens-desktop.css">
+    <link rel="stylesheet" href="build/tokens-tablet.css">
+    <link rel="stylesheet" href="build/tokens-mobile.css">
+    
+    <style>
+        /* Base styles using design tokens */
+        body {
+            font-family: var(--nyulh-string-typography-body-font-family, 'Inter', sans-serif);
+            font-size: var(--nyulh-dimension-typography-body-size-medium, 16px);
+            line-height: 1.6;
+            margin: 0;
+            padding: var(--nyulh-dimension-size-space-400, 16px);
+            background-color: var(--nyulh-color-background-default-default, #ffffff);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--nyulh-dimension-size-space-600, 24px);
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            position: fixed;
+            top: var(--nyulh-dimension-size-space-400, 16px);
+            right: var(--nyulh-dimension-size-space-400, 16px);
+            background: var(--nyulh-color-background-brand-default, #2c2c2c);
+            color: var(--nyulh-color-text-on-brand, #ffffff);
+            border: none;
+            padding: var(--nyulh-dimension-size-space-200, 8px) var(--nyulh-dimension-size-space-400, 16px);
+            border-radius: var(--nyulh-dimension-size-radius-100, 4px);
+            cursor: pointer;
+            font-family: var(--nyulh-string-typography-body-font-family, 'Inter', sans-serif);
+            font-size: var(--nyulh-dimension-typography-body-size-small, 14px);
+            transition: background-color 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--nyulh-color-background-brand-hover, #1e1e1e);
+        }
+        
+        /* Typography styles */
+        .title-hero {
+            font-size: var(--nyulh-dimension-typography-title-hero-size, 72px);
+            font-weight: var(--nyulh-dimension-typography-title-hero-font-weight, 700);
+            font-family: var(--nyulh-string-typography-title-hero-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-brand-default, #2c2c2c);
+            margin-bottom: var(--nyulh-dimension-size-space-600, 24px);
+            line-height: 1.2;
+        }
+        
+        .title-page {
+            font-size: var(--nyulh-dimension-typography-title-page-size-base, 48px);
+            font-weight: var(--nyulh-dimension-typography-title-page-font-weight, 700);
+            font-family: var(--nyulh-string-typography-title-page-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+            margin-bottom: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        .subtitle {
+            font-size: var(--nyulh-dimension-typography-subtitle-size-base, 32px);
+            font-weight: var(--nyulh-dimension-typography-subtitle-font-weight, 400);
+            font-family: var(--nyulh-string-typography-subtitle-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-default-secondary, #757575);
+            margin-bottom: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        .heading {
+            font-size: var(--nyulh-dimension-typography-heading-size-base, 24px);
+            font-weight: var(--nyulh-dimension-typography-heading-font-weight, 600);
+            font-family: var(--nyulh-string-typography-heading-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+            margin-bottom: var(--nyulh-dimension-size-space-300, 12px);
+        }
+        
+        .subheading {
+            font-size: var(--nyulh-dimension-typography-subheading-size-medium, 20px);
+            font-weight: var(--nyulh-dimension-typography-subheading-font-weight, 400);
+            font-family: var(--nyulh-string-typography-subheading-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-default-secondary, #757575);
+            margin-bottom: var(--nyulh-dimension-size-space-300, 12px);
+        }
+        
+        .body-text {
+            font-size: var(--nyulh-dimension-typography-body-size-medium, 16px);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-regular, 400);
+            font-family: var(--nyulh-string-typography-body-font-family, 'Inter', sans-serif);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+            margin-bottom: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        .code-text {
+            font-size: var(--nyulh-dimension-typography-code-size-base, 16px);
+            font-weight: var(--nyulh-dimension-typography-code-font-weight, 400);
+            font-family: var(--nyulh-string-typography-code-font-family, 'Roboto Mono', monospace);
+            background: var(--nyulh-color-background-default-secondary, #f5f5f5);
+            padding: var(--nyulh-dimension-size-space-200, 8px) var(--nyulh-dimension-size-space-300, 12px);
+            border-radius: var(--nyulh-dimension-size-radius-100, 4px);
+            border: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+        }
+        
+        /* Color swatches */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--nyulh-dimension-size-space-400, 16px);
+            margin-bottom: var(--nyulh-dimension-size-space-800, 32px);
+        }
+        
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+            border-radius: var(--nyulh-dimension-size-radius-200, 8px);
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .color-preview {
+            height: 80px;
+            width: 100%;
+        }
+        
+        .color-info {
+            padding: var(--nyulh-dimension-size-space-300, 12px);
+            background: var(--nyulh-color-background-default-default, #ffffff);
+        }
+        
+        .color-name {
+            font-size: var(--nyulh-dimension-typography-body-size-small, 14px);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-strong, 600);
+            margin-bottom: var(--nyulh-dimension-size-space-100, 4px);
+        }
+        
+        .color-value {
+            font-size: var(--nyulh-dimension-typography-body-size-small, 14px);
+            font-family: var(--nyulh-string-typography-code-font-family, 'Roboto Mono', monospace);
+            color: var(--nyulh-color-text-default-tertiary, #b3b3b3);
+        }
+        
+        /* Buttons */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--nyulh-dimension-size-space-200, 8px);
+            padding: var(--nyulh-dimension-size-space-300, 12px) var(--nyulh-dimension-size-space-400, 16px);
+            border: none;
+            border-radius: var(--nyulh-dimension-size-radius-100, 4px);
+            font-family: var(--nyulh-string-typography-body-font-family, 'Inter', sans-serif);
+            font-size: var(--nyulh-dimension-typography-body-size-medium, 16px);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-regular, 400);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            margin-right: var(--nyulh-dimension-size-space-200, 8px);
+            margin-bottom: var(--nyulh-dimension-size-space-200, 8px);
+        }
+        
+        .button-primary {
+            background: var(--nyulh-color-background-brand-default, #2c2c2c);
+            color: var(--nyulh-color-text-on-brand, #ffffff);
+        }
+        
+        .button-primary:hover {
+            background: var(--nyulh-color-background-brand-hover, #1e1e1e);
+        }
+        
+        .button-secondary {
+            background: var(--nyulh-color-background-neutral-secondary, #cdcdcd);
+            color: var(--nyulh-color-text-neutral-on-neutral-secondary, #303030);
+        }
+        
+        .button-secondary:hover {
+            background: var(--nyulh-color-background-neutral-secondary-hover, #b2b2b2);
+        }
+        
+        .button-success {
+            background: var(--nyulh-color-background-positive-default, #14ae5c);
+            color: var(--nyulh-color-text-on-positive, #ebffee);
+        }
+        
+        .button-success:hover {
+            background: var(--nyulh-color-background-positive-hover, #009951);
+        }
+        
+        .button-warning {
+            background: var(--nyulh-color-background-warning-default, #e8b931);
+            color: var(--nyulh-color-text-on-warning, #401b01);
+        }
+        
+        .button-warning:hover {
+            background: var(--nyulh-color-background-warning-hover, #e5a000);
+        }
+        
+        .button-danger {
+            background: var(--nyulh-color-background-danger-default, #ec221f);
+            color: var(--nyulh-color-text-on-danger, #fee9e7);
+        }
+        
+        .button-danger:hover {
+            background: var(--nyulh-color-background-danger-hover, #c00f0c);
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--nyulh-color-background-default-default, #ffffff);
+            border: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+            border-radius: var(--nyulh-dimension-size-radius-200, 8px);
+            padding: var(--nyulh-dimension-size-space-600, 24px);
+            margin-bottom: var(--nyulh-dimension-size-space-400, 16px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Form elements */
+        .form-group {
+            margin-bottom: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        .form-label {
+            display: block;
+            font-size: var(--nyulh-dimension-typography-body-size-small, 14px);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-strong, 600);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+            margin-bottom: var(--nyulh-dimension-size-space-200, 8px);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: var(--nyulh-dimension-size-space-300, 12px);
+            border: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+            border-radius: var(--nyulh-dimension-size-radius-100, 4px);
+            font-family: var(--nyulh-string-typography-body-font-family, 'Inter', sans-serif);
+            font-size: var(--nyulh-dimension-typography-body-size-medium, 16px);
+            background: var(--nyulh-color-background-default-default, #ffffff);
+            color: var(--nyulh-color-text-default-default, #1e1e1e);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--nyulh-color-border-brand-default, #2c2c2c);
+            box-shadow: 0 0 0 var(--nyulh-dimension-size-stroke-focus-ring, 2px) var(--nyulh-color-border-brand-tertiary, #757575);
+        }
+        
+        /* Spacing examples */
+        .spacing-example {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--nyulh-dimension-size-space-200, 8px);
+        }
+        
+        .spacing-box {
+            background: var(--nyulh-color-background-brand-secondary, #e6e6e6);
+            border: 1px solid var(--nyulh-color-border-brand-secondary, #444444);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--nyulh-dimension-typography-body-size-small, 14px);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-strong, 600);
+            color: var(--nyulh-color-text-brand-default, #2c2c2c);
+            margin-right: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        /* Responsive grid */
+        .responsive-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--nyulh-dimension-size-space-400, 16px);
+        }
+        
+        /* Token inspector */
+        .token-inspector {
+            background: var(--nyulh-color-background-default-secondary, #f5f5f5);
+            border: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+            border-radius: var(--nyulh-dimension-size-radius-100, 4px);
+            padding: var(--nyulh-dimension-size-space-400, 16px);
+            margin-top: var(--nyulh-dimension-size-space-800, 32px);
+        }
+        
+        .token-list {
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: var(--nyulh-string-typography-code-font-family, 'Roboto Mono', monospace);
+            font-size: var(--nyulh-dimension-typography-code-size-small, 14px);
+            line-height: 1.4;
+        }
+        
+        .token-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--nyulh-dimension-size-space-100, 4px) 0;
+            border-bottom: 1px solid var(--nyulh-color-border-default-default, #d9d9d9);
+        }
+        
+        .token-name {
+            color: var(--nyulh-color-text-brand-default, #2c2c2c);
+            font-weight: var(--nyulh-dimension-typography-body-font-weight-strong, 600);
+        }
+        
+        .token-value {
+            color: var(--nyulh-color-text-default-tertiary, #b3b3b3);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .title-hero {
+                font-size: var(--nyulh-dimension-typography-title-page-size-large, 64px);
+            }
+            
+            .color-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .responsive-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+    
+    <div class="container">
+        <header>
+            <h1 class="title-hero">NYU Langone Health</h1>
+            <p class="subtitle">Design Tokens Test Page</p>
+        </header>
+        
+        <section>
+            <h2 class="title-page">Typography Scale</h2>
+            <div class="card">
+                <h1 class="title-hero">Title Hero (72px)</h1>
+                <h2 class="title-page">Title Page (48px)</h2>
+                <h3 class="subtitle">Subtitle (32px)</h3>
+                <h4 class="heading">Heading (24px)</h4>
+                <h5 class="subheading">Subheading (20px)</h5>
+                <p class="body-text">Body text (16px) - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <code class="code-text">Code text (16px) - console.log('Hello, world!');</code>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="title-page">Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-brand-default);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Brand Default</div>
+                        <div class="color-value">--nyulh-color-background-brand-default</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-positive-default);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Positive Default</div>
+                        <div class="color-value">--nyulh-color-background-positive-default</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-warning-default);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warning Default</div>
+                        <div class="color-value">--nyulh-color-background-warning-default</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-danger-default);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Danger Default</div>
+                        <div class="color-value">--nyulh-color-background-danger-default</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-neutral-default);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Neutral Default</div>
+                        <div class="color-value">--nyulh-color-background-neutral-default</div>
+                    </div>
+                </div>
+                
+                <div class="color-swatch">
+                    <div class="color-preview" style="background-color: var(--nyulh-color-background-default-secondary);"></div>
+                    <div class="color-info">
+                        <div class="color-name">Background Secondary</div>
+                        <div class="color-value">--nyulh-color-background-default-secondary</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="title-page">Interactive Elements</h2>
+            <div class="card">
+                <h3 class="heading">Buttons</h3>
+                <div>
+                    <button class="button button-primary">Primary Button</button>
+                    <button class="button button-secondary">Secondary Button</button>
+                    <button class="button button-success">Success Button</button>
+                    <button class="button button-warning">Warning Button</button>
+                    <button class="button button-danger">Danger Button</button>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3 class="heading">Form Elements</h3>
+                <div class="form-group">
+                    <label class="form-label" for="test-input">Text Input</label>
+                    <input class="form-input" type="text" id="test-input" placeholder="Enter text here...">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="test-textarea">Textarea</label>
+                    <textarea class="form-input" id="test-textarea" rows="4" placeholder="Enter message here..."></textarea>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="title-page">Spacing Scale</h2>
+            <div class="card">
+                <h3 class="heading">Space Tokens</h3>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-100, 4px); height: var(--nyulh-dimension-size-space-100, 4px);">4px</div>
+                    <span>space-100: 4px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-200, 8px); height: var(--nyulh-dimension-size-space-200, 8px);">8px</div>
+                    <span>space-200: 8px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-300, 12px); height: var(--nyulh-dimension-size-space-300, 12px);">12px</div>
+                    <span>space-300: 12px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-400, 16px); height: var(--nyulh-dimension-size-space-400, 16px);">16px</div>
+                    <span>space-400: 16px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-600, 24px); height: var(--nyulh-dimension-size-space-600, 24px);">24px</div>
+                    <span>space-600: 24px</span>
+                </div>
+                <div class="spacing-example">
+                    <div class="spacing-box" style="width: var(--nyulh-dimension-size-space-800, 32px); height: var(--nyulh-dimension-size-space-800, 32px);">32px</div>
+                    <span>space-800: 32px</span>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="title-page">Responsive Grid</h2>
+            <div class="responsive-grid">
+                <div class="card">
+                    <h3 class="heading">Card 1</h3>
+                    <p class="body-text">This grid responds to different screen sizes using CSS Grid and design tokens.</p>
+                </div>
+                <div class="card">
+                    <h3 class="heading">Card 2</h3>
+                    <p class="body-text">Resize your browser window to see the responsive behavior.</p>
+                </div>
+                <div class="card">
+                    <h3 class="heading">Card 3</h3>
+                    <p class="body-text">All spacing, colors, and typography use design tokens.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2 class="title-page">Token Inspector</h2>
+            <div class="token-inspector">
+                <h3 class="heading">CSS Custom Properties</h3>
+                <p class="body-text">Live CSS custom properties currently applied to this page:</p>
+                <div class="token-list" id="token-list">
+                    Loading tokens...
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const html = document.documentElement;
+            const button = document.querySelector('.theme-toggle');
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                button.textContent = '🌙 Dark Mode';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                button.textContent = '☀️ Light Mode';
+                localStorage.setItem('theme', 'dark');
+            }
+            
+            // Update token inspector after theme change
+            setTimeout(updateTokenInspector, 100);
+        }
+        
+        // Initialize theme from localStorage
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const button = document.querySelector('.theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                button.textContent = '☀️ Light Mode';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                button.textContent = '🌙 Dark Mode';
+            }
+        }
+        
+        // Update token inspector
+        function updateTokenInspector() {
+            const tokenList = document.getElementById('token-list');
+            const styles = getComputedStyle(document.documentElement);
+            const tokens = [];
+            
+            // Get all CSS custom properties that start with --nyulh-
+            for (let i = 0; i < styles.length; i++) {
+                const prop = styles[i];
+                if (prop.startsWith('--nyulh-')) {
+                    tokens.push({
+                        name: prop,
+                        value: styles.getPropertyValue(prop).trim()
+                    });
+                }
+            }
+            
+            // Sort tokens alphabetically
+            tokens.sort((a, b) => a.name.localeCompare(b.name));
+            
+            // Generate HTML for token list
+            const tokenHTML = tokens.map(token => `
+                <div class="token-item">
+                    <span class="token-name">${token.name}</span>
+                    <span class="token-value">${token.value}</span>
+                </div>
+            `).join('');
+            
+            tokenList.innerHTML = tokenHTML || '<p>No design tokens found. Make sure the CSS files are loaded.</p>';
+        }
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTheme();
+            updateTokenInspector();
+        });
+        
+        // Update token inspector when window resizes (for responsive tokens)
+        window.addEventListener('resize', updateTokenInspector);
+    </script>
+</body>
+</html>

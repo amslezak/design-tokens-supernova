@@ -1,0 +1,101 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Semantic Tokens - Meaningful connections between design intent and implementation
+ * 
+ * These tokens create semantic meaning from the core design tokens
+ * They provide context-specific naming for common UI patterns
+ */
+
+@layer tokens {
+  :root {
+    /* ========================================
+       TEXT COLOR HIERARCHY
+       ======================================== */
+    
+    --color-text-primary: var(--color-gray-900);      /* Primary content */
+    --color-text-secondary: var(--color-gray-700);    /* Supporting content */
+    --color-text-tertiary: var(--color-gray-600);     /* Metadata */
+    --color-text-disabled: var(--color-gray-400);     /* Disabled state */
+    --color-text-inverse: var(--color-gray-0);        /* On dark backgrounds */
+    
+    /* Interactive Text */
+    --color-text-link: var(--color-blue-700);         /* Interactive links */
+    --color-text-link-hover: var(--color-blue-800);   /* Link hover state */
+    --color-text-link-visited: var(--color-purple-700); /* Visited links */
+    
+    /* Status Text Colors */
+    --color-text-error: var(--color-red-700);         /* Error messages */
+    --color-text-success: var(--color-green-700);     /* Success messages */
+    --color-text-warning: var(--color-orange-700);    /* Warning messages */
+    --color-text-info: var(--color-teal-700);         /* Info messages */
+
+    /* ========================================
+       BACKGROUND COLOR HIERARCHY
+       ======================================== */
+    
+    --color-background-primary: var(--color-gray-0);     /* Main background */
+    --color-background-secondary: var(--color-gray-50);  /* Sections */
+    --color-background-tertiary: var(--color-gray-100);  /* Nested content */
+    --color-background-elevated: var(--color-gray-0);    /* Cards, modals */
+    --color-background-inverse: var(--color-gray-900);   /* Dark sections */
+    --color-background-overlay: rgba(0, 0, 0, 0.5);     /* Modal backdrop */
+    --color-background-disabled: var(--color-gray-100);  /* Disabled elements */
+
+    /* ========================================
+       INTERACTIVE STATES
+       ======================================== */
+    
+    /* Primary Interactive Colors */
+    --color-interactive-primary: var(--color-purple-500);
+    --color-interactive-primary-hover: var(--color-purple-600);
+    --color-interactive-primary-active: var(--color-purple-700);
+    --color-interactive-primary-disabled: var(--color-gray-300);
+    
+    /* Secondary Interactive Colors */
+    --color-interactive-secondary: var(--color-blue-500);
+    --color-interactive-secondary-hover: var(--color-blue-600);
+    --color-interactive-secondary-active: var(--color-blue-700);
+    --color-interactive-secondary-disabled: var(--color-gray-300);
+
+    /* ========================================
+       BORDER COLORS
+       ======================================== */
+    
+    --color-border-default: var(--color-gray-300);       /* Default borders */
+    --color-border-secondary: var(--color-gray-200);     /* Subtle borders */
+    --color-border-strong: var(--color-gray-400);        /* Emphasis borders */
+    --color-border-interactive: var(--color-purple-500); /* Interactive borders */
+    --color-border-focus: var(--color-purple-500);       /* Focus state */
+    --color-border-error: var(--color-red-500);          /* Error state */
+    --color-border-success: var(--color-green-500);      /* Success state */
+    --color-border-warning: var(--color-orange-500);     /* Warning state */
+    --color-border-disabled: var(--color-gray-200);      /* Disabled state */
+  }
+
+  /* ========================================
+     DARK THEME SEMANTIC OVERRIDES
+     ======================================== */
+
+  [data-theme="dark"] {
+    /* Text Colors for Dark Mode */
+    --color-text-primary: var(--color-gray-50);
+    --color-text-secondary: var(--color-gray-300);
+    --color-text-tertiary: var(--color-gray-400);
+    --color-text-disabled: var(--color-gray-600);
+    --color-text-inverse: var(--color-gray-900);
+    
+    /* Background Colors for Dark Mode */
+    --color-background-primary: var(--color-gray-900);
+    --color-background-secondary: var(--color-gray-800);
+    --color-background-tertiary: var(--color-gray-700);
+    --color-background-elevated: var(--color-gray-800);
+    --color-background-inverse: var(--color-gray-0);
+    --color-background-disabled: var(--color-gray-700);
+    
+    /* Border Colors for Dark Mode */
+    --color-border-default: var(--color-gray-600);
+    --color-border-secondary: var(--color-gray-700);
+    --color-border-strong: var(--color-gray-500);
+    --color-border-disabled: var(--color-gray-700);
+  }
+}

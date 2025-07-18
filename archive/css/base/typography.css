@@ -1,0 +1,405 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Typography Base Styles
+ * 
+ * Base typography styles that establish the foundation for all text in the system
+ * Optimized for healthcare interfaces with accessibility as a priority
+ */
+
+@layer base {
+  /* ========================================
+     BODY TEXT FOUNDATION
+     ======================================== */
+
+  body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-normal);
+    letter-spacing: var(--letter-spacing-normal);
+    
+    /* Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+  }
+
+  /* ========================================
+     HEADING HIERARCHY
+     ======================================== */
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-primary);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-text-primary);
+    letter-spacing: var(--letter-spacing-tight);
+    
+    /* Improve heading readability */
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  h1 {
+    font-size: var(--font-size-5xl);
+  }
+
+  h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  h3 {
+    font-size: var(--font-size-3xl);
+  }
+
+  h4 {
+    font-size: var(--font-size-2xl);
+  }
+
+  h5 {
+    font-size: var(--font-size-xl);
+  }
+
+  h6 {
+    font-size: var(--font-size-lg);
+  }
+
+  /* ========================================
+     BODY TEXT ELEMENTS
+     ======================================== */
+
+  p {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    
+    /* Improve paragraph readability */
+    text-wrap: pretty;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Large text for better readability in healthcare contexts */
+  .text-large {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Small text for metadata and secondary information */
+  .text-small {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+  }
+
+  /* Extra small text (use sparingly, only for legal text) */
+  .text-xs {
+    font-size: var(--font-size-xs);
+    color: var(--color-text-tertiary);
+  }
+
+  /* ========================================
+     TEXT EMPHASIS
+     ======================================== */
+
+  strong,
+  b {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  /* Semantic emphasis classes */
+  .text-emphasis {
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
+  }
+
+  .text-strong {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  .text-bold {
+    font-weight: var(--font-weight-bold);
+  }
+
+  /* ========================================
+     TEXT HIERARCHY CLASSES
+     ======================================== */
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-tertiary {
+    color: var(--color-text-tertiary);
+  }
+
+  .text-disabled {
+    color: var(--color-text-disabled);
+  }
+
+  .text-inverse {
+    color: var(--color-text-inverse);
+  }
+
+  /* ========================================
+     STATUS TEXT COLORS
+     ======================================== */
+
+  .text-error {
+    color: var(--color-text-error);
+  }
+
+  .text-success {
+    color: var(--color-text-success);
+  }
+
+  .text-warning {
+    color: var(--color-text-warning);
+  }
+
+  .text-info {
+    color: var(--color-text-info);
+  }
+
+  /* ========================================
+     CODE AND MONOSPACE
+     ======================================== */
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-family-mono);
+    font-size: 0.9em; /* Slightly smaller than surrounding text */
+  }
+
+  /* Inline code */
+  code {
+    background-color: var(--color-background-secondary);
+    padding: 0.125em 0.25em;
+    border-radius: var(--radius-sm);
+    border: var(--border-width-thin) solid var(--color-border-secondary);
+  }
+
+  /* Code blocks */
+  pre {
+    background-color: var(--color-background-secondary);
+    padding: var(--space-4);
+    border-radius: var(--radius-md);
+    border: var(--border-width-thin) solid var(--color-border-secondary);
+    overflow-x: auto;
+    line-height: var(--line-height-relaxed);
+  }
+
+  pre code {
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  /* Keyboard input styling */
+  kbd {
+    background-color: var(--color-background-tertiary);
+    border: var(--border-width-thin) solid var(--color-border-default);
+    border-radius: var(--radius-sm);
+    padding: 0.125em 0.25em;
+    font-size: var(--font-size-sm);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  /* ========================================
+     LISTS
+     ======================================== */
+
+  ul, ol {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-4);
+  }
+
+  ul li,
+  ol li {
+    margin-bottom: var(--space-2);
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Remove margin from last list item */
+  ul li:last-child,
+  ol li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Definition lists */
+  dl {
+    margin-bottom: var(--space-4);
+  }
+
+  dt {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-1);
+  }
+
+  dd {
+    margin-left: var(--space-4);
+    margin-bottom: var(--space-3);
+    color: var(--color-text-secondary);
+  }
+
+  /* ========================================
+     QUOTES AND CITATIONS
+     ======================================== */
+
+  blockquote {
+    margin: var(--space-6) 0;
+    padding: var(--space-4) var(--space-6);
+    border-left: var(--border-width-thick) solid var(--color-interactive-primary);
+    background-color: var(--color-background-secondary);
+    border-radius: var(--radius-md);
+    font-style: italic;
+    color: var(--color-text-secondary);
+  }
+
+  blockquote p {
+    margin-bottom: var(--space-2);
+  }
+
+  blockquote p:last-child {
+    margin-bottom: 0;
+  }
+
+  cite {
+    font-style: normal;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-tertiary);
+  }
+
+  /* ========================================
+     LINKS
+     ======================================== */
+
+  a {
+    color: var(--color-text-link);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  a:hover {
+    color: var(--color-text-link-hover);
+    text-decoration-thickness: 2px;
+  }
+
+  a:focus-visible {
+    outline: var(--border-width-thick) solid var(--color-border-focus);
+    outline-offset: var(--space-1);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Remove underline from links that are clearly interactive (buttons, cards, etc.) */
+  a.no-underline {
+    text-decoration: none;
+  }
+
+  a.no-underline:hover {
+    text-decoration: none;
+  }
+
+  /* ========================================
+     ABBREVIATIONS AND ACRONYMS
+     ======================================== */
+
+  abbr[title] {
+    text-decoration: underline dotted;
+    cursor: help;
+    border-bottom: none;
+  }
+
+  /* ========================================
+     RESPONSIVE TYPOGRAPHY
+     ======================================== */
+
+  /* Fluid typography for better mobile experience */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: var(--font-size-fluid-xl);
+    }
+
+    h2 {
+      font-size: var(--font-size-fluid-lg);
+    }
+
+    h3 {
+      font-size: var(--font-size-fluid-base);
+    }
+
+    body {
+      font-size: var(--font-size-fluid-sm);
+    }
+
+    /* Increase line height on mobile for better readability */
+    p, li {
+      line-height: var(--line-height-relaxed);
+    }
+  }
+
+  /* Large screen optimizations */
+  @media (min-width: 1200px) {
+    body {
+      font-size: var(--font-size-lg);
+    }
+  }
+
+  /* ========================================
+     HEALTHCARE-SPECIFIC TYPOGRAPHY
+     ======================================== */
+
+  /* Medical record numbers and patient IDs */
+  .medical-id {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  /* Clinical data emphasis */
+  .clinical-data {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+  }
+
+  /* Status text styling */
+  .status-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+  }
+
+  /* Patient name styling */
+  .patient-name {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-lg);
+    color: var(--color-text-primary);
+  }
+
+  /* Emergency text - high visibility */
+  .emergency-text {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-error);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wider);
+  }
+}

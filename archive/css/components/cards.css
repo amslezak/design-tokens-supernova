@@ -1,0 +1,507 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Card Components
+ * 
+ * Flexible card components for displaying healthcare information
+ * with proper hierarchy and responsive behavior
+ */
+
+@layer components {
+  /* ========================================
+     BASE CARD STYLES
+     ======================================== */
+
+  .card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    
+    /* Appearance */
+    background: var(--color-background-elevated);
+    border: var(--border-width-thin) solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    
+    /* Elevation */
+    box-shadow: var(--shadow-sm);
+    
+    /* Interactions */
+    transition: box-shadow var(--duration-normal) var(--ease-in-out),
+                transform var(--duration-fast) var(--ease-out);
+    
+    /* Content containment for performance */
+    contain: layout style paint;
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Interactive cards */
+  .card.is-interactive {
+    cursor: pointer;
+  }
+
+  .card.is-interactive:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .card.is-interactive:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Focus state for interactive cards */
+  .card.is-interactive:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus), var(--shadow-lg);
+  }
+
+  /* ========================================
+     CARD SIZES
+     ======================================== */
+
+  .card-sm {
+    padding: var(--space-4);
+  }
+
+  .card-md {
+    padding: var(--space-6);
+  }
+
+  .card-lg {
+    padding: var(--space-8);
+  }
+
+  /* Default padding */
+  .card:not(.card-sm):not(.card-md):not(.card-lg) {
+    padding: var(--space-6);
+  }
+
+  /* ========================================
+     CARD VARIANTS
+     ======================================== */
+
+  /* Flat card - no shadow */
+  .card-flat {
+    box-shadow: none;
+    border: var(--border-width-thin) solid var(--color-border-secondary);
+  }
+
+  .card-flat:hover {
+    box-shadow: var(--shadow-xs);
+  }
+
+  /* Outlined card - prominent border */
+  .card-outlined {
+    border: var(--border-width-medium) solid var(--color-border-default);
+    box-shadow: none;
+  }
+
+  /* Elevated card - more prominent shadow */
+  .card-elevated {
+    box-shadow: var(--shadow-lg);
+    border: none;
+  }
+
+  .card-elevated:hover {
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* ========================================
+     CARD HEADER
+     ======================================== */
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-4);
+    border-bottom: var(--border-width-thin) solid var(--color-border-secondary);
+  }
+
+  .card-header:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .card-title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    margin: 0;
+    line-height: var(--line-height-tight);
+  }
+
+  .card-subtitle {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin: var(--space-1) 0 0 0;
+    line-height: var(--line-height-normal);
+  }
+
+  .card-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+  }
+
+  /* ========================================
+     CARD BODY
+     ======================================== */
+
+  .card-body {
+    flex: 1;
+    color: var(--color-text-primary);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .card-body > *:first-child {
+    margin-top: 0;
+  }
+
+  .card-body > *:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ========================================
+     CARD FOOTER
+     ======================================== */
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: var(--border-width-thin) solid var(--color-border-secondary);
+  }
+
+  .card-footer:first-child {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  /* ========================================
+     CARD MEDIA
+     ======================================== */
+
+  .card-media {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+  }
+
+  .card-media:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Media at the top of card */
+  .card > .card-media:first-child {
+    margin-top: calc(var(--space-6) * -1);
+    margin-left: calc(var(--space-6) * -1);
+    margin-right: calc(var(--space-6) * -1);
+    margin-bottom: var(--space-4);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+
+  /* ========================================
+     HEALTHCARE-SPECIFIC CARDS
+     ======================================== */
+
+  /* Patient Card */
+  .card-patient {
+    container-type: inline-size;
+    container-name: patient-card;
+  }
+
+  @container patient-card (min-width: 400px) {
+    .card-patient .patient-info {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: var(--space-4);
+      align-items: center;
+    }
+  }
+
+  @container patient-card (max-width: 399px) {
+    .card-patient .patient-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: var(--space-3);
+    }
+  }
+
+  .patient-avatar {
+    width: var(--space-12);
+    height: var(--space-12);
+    border-radius: var(--radius-circle);
+    background: var(--color-purple-100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-purple-700);
+    font-size: var(--font-size-lg);
+    flex-shrink: 0;
+  }
+
+  .patient-details h3 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-1);
+    color: var(--color-text-primary);
+  }
+
+  .patient-meta {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+  }
+
+  .patient-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  /* Alert Card */
+  .card-alert {
+    border-left: var(--border-width-heavy) solid;
+    padding-left: var(--space-5);
+  }
+
+  .card-alert.alert-critical {
+    border-left-color: var(--color-status-critical);
+    background: var(--color-red-50);
+  }
+
+  .card-alert.alert-warning {
+    border-left-color: var(--color-status-caution);
+    background: var(--color-orange-50);
+  }
+
+  .card-alert.alert-info {
+    border-left-color: var(--color-blue-500);
+    background: var(--color-blue-50);
+  }
+
+  .card-alert.alert-success {
+    border-left-color: var(--color-status-stable);
+    background: var(--color-green-50);
+  }
+
+  /* Vitals Card */
+  .card-vitals {
+    text-align: center;
+  }
+
+  .vitals-value {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    line-height: 1;
+    margin-bottom: var(--space-2);
+  }
+
+  .vitals-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    font-weight: var(--font-weight-medium);
+  }
+
+  .vitals-status {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+  }
+
+  .vitals-status.normal {
+    background: var(--color-green-100);
+    color: var(--color-green-900);
+  }
+
+  .vitals-status.abnormal {
+    background: var(--color-orange-100);
+    color: var(--color-orange-900);
+  }
+
+  .vitals-status.critical {
+    background: var(--color-red-100);
+    color: var(--color-red-900);
+  }
+
+  /* ========================================
+     CARD LAYOUTS
+     ======================================== */
+
+  /* Horizontal card */
+  .card-horizontal {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .card-horizontal {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  /* Card grid */
+  .card-grid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .card-grid-sm {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .card-grid-lg {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-8);
+  }
+
+  /* ========================================
+     STATUS INDICATORS
+     ======================================== */
+
+  .status-indicator {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: var(--radius-circle);
+    display: inline-block;
+    margin-right: var(--space-2);
+    flex-shrink: 0;
+  }
+
+  .status-stable {
+    background: var(--color-status-stable);
+  }
+
+  .status-caution {
+    background: var(--color-status-caution);
+  }
+
+  .status-critical {
+    background: var(--color-status-critical);
+  }
+
+  .status-unknown {
+    background: var(--color-status-unknown);
+  }
+
+  /* ========================================
+     MEDICAL BADGES
+     ======================================== */
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    white-space: nowrap;
+  }
+
+  .badge-medication {
+    background: var(--color-data-medication);
+    color: var(--color-text-inverse);
+  }
+
+  .badge-vitals {
+    background: var(--color-data-vitals);
+    color: var(--color-text-inverse);
+  }
+
+  .badge-labs {
+    background: var(--color-data-labs);
+    color: var(--color-text-inverse);
+  }
+
+  .badge-imaging {
+    background: var(--color-data-imaging);
+    color: var(--color-text-inverse);
+  }
+
+  .badge-notes {
+    background: var(--color-data-notes);
+    color: var(--color-text-inverse);
+  }
+
+  /* ========================================
+     ACCESSIBILITY ENHANCEMENTS
+     ======================================== */
+
+  /* High contrast mode */
+  @media (prefers-contrast: high) {
+    .card {
+      border-width: var(--border-width-medium);
+    }
+    
+    .card.is-interactive:focus-visible {
+      outline: var(--border-width-thick) solid CanvasText;
+      outline-offset: var(--space-1);
+    }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .card,
+    .card.is-interactive {
+      transition: none;
+    }
+    
+    .card.is-interactive:hover {
+      transform: none;
+    }
+  }
+
+  /* ========================================
+     DARK THEME ADJUSTMENTS
+     ======================================== */
+
+  [data-theme="dark"] {
+    .card-alert.alert-critical {
+      background: rgba(244, 67, 54, 0.1);
+    }
+
+    .card-alert.alert-warning {
+      background: rgba(255, 152, 0, 0.1);
+    }
+
+    .card-alert.alert-info {
+      background: rgba(0, 161, 223, 0.1);
+    }
+
+    .card-alert.alert-success {
+      background: rgba(76, 175, 80, 0.1);
+    }
+
+    .patient-avatar {
+      background: var(--color-purple-900);
+      color: var(--color-purple-200);
+    }
+  }
+}

@@ -1,0 +1,305 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * CSS Reset - Modern, accessible baseline styles
+ * 
+ * A modern CSS reset that provides sensible defaults while maintaining accessibility
+ * Based on modern best practices and healthcare interface requirements
+ */
+
+@layer reset {
+  /* ========================================
+     BOX MODEL & BASELINE RESET
+     ======================================== */
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ========================================
+     ROOT ELEMENT SETUP
+     ======================================== */
+
+  html {
+    /* Smooth scrolling for better UX */
+    scroll-behavior: smooth;
+    
+    /* Prevent font size inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    
+    /* Better font rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ========================================
+     BODY BASELINE
+     ======================================== */
+
+  body {
+    /* Ensure body takes full viewport height */
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+    
+    /* Improve text rendering */
+    text-rendering: optimizeSpeed;
+    
+    /* Set line height for better readability */
+    line-height: 1.5;
+    
+    /* Remove default body margin */
+    margin: 0;
+  }
+
+  /* ========================================
+     TYPOGRAPHY BASELINE
+     ======================================== */
+
+  h1, h2, h3, h4, h5, h6 {
+    /* Remove default margins */
+    margin: 0;
+    
+    /* Improve heading line-height for better visual hierarchy */
+    line-height: 1.25;
+    
+    /* Prevent long headings from overflowing */
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  p, li, figcaption {
+    /* Improve readability with optimal line length */
+    max-width: 75ch;
+    
+    /* Better text wrapping */
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* ========================================
+     INTERACTIVE ELEMENTS
+     ======================================== */
+
+  /* Remove default button styles while maintaining accessibility */
+  button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+  }
+
+  /* Ensure buttons can be focused */
+  button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* Remove default input styles */
+  input,
+  textarea,
+  select {
+    font: inherit;
+    color: inherit;
+  }
+
+  /* Remove default fieldset styles */
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Improve form legend styling */
+  legend {
+    padding: 0;
+  }
+
+  /* ========================================
+     LINKS
+     ======================================== */
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
+  /* Ensure links are focusable and accessible */
+  a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* ========================================
+     MEDIA ELEMENTS
+     ======================================== */
+
+  /* Make images responsive by default */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Remove default styling from SVGs */
+  svg {
+    fill: currentColor;
+  }
+
+  /* ========================================
+     LISTS
+     ======================================== */
+
+  /* Remove default list styling where a class is present */
+  ul[class],
+  ol[class] {
+    list-style: none;
+    padding: 0;
+  }
+
+  /* ========================================
+     TABLES
+     ======================================== */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  /* ========================================
+     ACCESSIBILITY IMPROVEMENTS
+     ======================================== */
+
+  /* Remove animations for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode adjustments */
+  @media (prefers-contrast: high) {
+    /* Ensure sufficient contrast in high contrast mode */
+    * {
+      border-color: CanvasText !important;
+      color: CanvasText !important;
+      background-color: Canvas !important;
+    }
+    
+    /* Maintain button and link visibility */
+    button,
+    a[href] {
+      border: 1px solid CanvasText !important;
+    }
+  }
+
+  /* ========================================
+     FOCUS MANAGEMENT
+     ======================================== */
+
+  /* Remove default focus styles only when not using keyboard navigation */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Ensure consistent focus styling */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* ========================================
+     SELECTION STYLING
+     ======================================== */
+
+  ::selection {
+    background-color: rgba(94, 46, 132, 0.2); /* NYU Purple with opacity */
+    color: inherit;
+  }
+
+  /* ========================================
+     SCROLLBAR STYLING (WEBKIT)
+     ======================================== */
+
+  /* Modern scrollbar styling for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  /* Dark mode scrollbar adjustments */
+  [data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+
+  /* ========================================
+     PRINT STYLES
+     ======================================== */
+
+  @media print {
+    /* Optimize for printing */
+    * {
+      background: transparent !important;
+      color: black !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    /* Ensure good page breaks */
+    h1, h2, h3, h4, h5, h6 {
+      page-break-after: avoid;
+    }
+
+    p, li {
+      page-break-inside: avoid;
+    }
+
+    img {
+      max-width: 100% !important;
+    }
+
+    /* Show URLs for links in print */
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+
+    /* Don't show URLs for fragment identifiers or JavaScript */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+      content: "";
+    }
+  }
+}

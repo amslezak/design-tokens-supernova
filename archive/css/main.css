@@ -1,0 +1,358 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Main CSS Entry Point
+ * 
+ * This file imports all design system styles in the correct order
+ * using modern CSS @import syntax with CSS layers for proper cascade control
+ */
+
+/* ========================================
+   CSS LAYER ORDER DEFINITION
+   ======================================== */
+
+@layer reset, base, tokens, components, utilities, overrides;
+
+/* ========================================
+   DESIGN TOKENS
+   ======================================== */
+
+/* Core design tokens - foundational visual properties */
+@import "./tokens/design-tokens.css";
+
+/* Semantic tokens - contextual meaning for core tokens */
+@import "./tokens/semantic-tokens.css";
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+
+/* Modern CSS reset for consistent baseline */
+@import "./base/reset.css";
+
+/* Typography foundation and text styling */
+@import "./base/typography.css";
+
+/* ========================================
+   COMPONENT STYLES
+   ======================================== */
+
+/* Navigation components */
+@import "./components/navigation.css";
+
+/* Button components and variants */
+@import "./components/buttons.css";
+
+/* Form elements and input styling */
+@import "./components/forms.css";
+
+/* Card components and layouts */
+@import "./components/cards.css";
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Single-purpose utility classes */
+@import "./utilities/utilities.css";
+
+/* ========================================
+   GLOBAL BASE STYLES
+   ======================================== */
+
+@layer base {
+  /* Root element setup */
+  html {
+    /* Enable smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+    
+    /* Prevent font size inflation on mobile */
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Body element foundation */
+  body {
+    /* Use design system typography */
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+    
+    /* Smooth transitions for theme changes */
+    transition: background-color var(--duration-normal) var(--ease-in-out),
+                color var(--duration-normal) var(--ease-in-out);
+    
+    /* Ensure minimum height for full viewport coverage */
+    min-height: 100vh;
+    min-height: 100dvh; /* Dynamic viewport height for mobile */
+  }
+
+  /* Improve focus visibility for keyboard navigation */
+  :focus-visible {
+    outline: var(--border-width-thick) solid var(--color-border-focus);
+    outline-offset: var(--space-1);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background-color: rgba(94, 46, 132, 0.25); /* NYU Purple with opacity */
+    color: inherit;
+  }
+}
+
+/* ========================================
+   MODERN CSS FEATURES
+   ======================================== */
+
+@layer components {
+  /* Container query support for responsive components */
+  @supports (container-type: inline-size) {
+    .responsive-container {
+      container-type: inline-size;
+    }
+  }
+
+  /* Fallback for browsers without container query support */
+  @supports not (container-type: inline-size) {
+    .responsive-container {
+      /* Use media queries as fallback */
+    }
+  }
+
+  /* CSS Grid subgrid support */
+  @supports (grid-template-columns: subgrid) {
+    .subgrid-container {
+      display: grid;
+      grid-template-columns: subgrid;
+    }
+  }
+
+  /* :has() selector for parent-based styling */
+  @supports selector(:has(*)) {
+    .form-field:has(input:invalid:not(:focus)) {
+      --field-border-color: var(--color-border-error);
+    }
+
+    .form-field:has(input:valid:not(:placeholder-shown)) {
+      --field-border-color: var(--color-border-success);
+    }
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+@layer base {
+  /* Respect user preferences for reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    :root {
+      --color-text-primary: CanvasText;
+      --color-background-primary: Canvas;
+      --border-width-thin: var(--border-width-medium);
+    }
+    
+    button,
+    input,
+    select,
+    textarea {
+      border: var(--border-width-medium) solid CanvasText !important;
+    }
+  }
+
+  /* Color scheme preference support */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      /* Auto dark mode - only if no manual theme is set */
+      --color-text-primary: var(--color-gray-50);
+      --color-text-secondary: var(--color-gray-300);
+      --color-text-tertiary: var(--color-gray-400);
+      --color-background-primary: var(--color-gray-900);
+      --color-background-secondary: var(--color-gray-800);
+      --color-background-tertiary: var(--color-gray-700);
+    }
+  }
+
+  /* Print optimizations */
+  @media print {
+    :root {
+      /* Optimize colors for print */
+      --color-text-primary: #000000 !important;
+      --color-background-primary: #ffffff !important;
+      --shadow-sm: none !important;
+      --shadow-md: none !important;
+      --shadow-lg: none !important;
+    }
+
+    /* Hide non-essential elements */
+    .nav,
+    .theme-toggle,
+    button:not(.print-button) {
+      display: none !important;
+    }
+
+    /* Optimize spacing for print */
+    .section {
+      padding: var(--space-4) 0 !important;
+    }
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+@layer base {
+  /* Optimize rendering for large datasets */
+  .large-list-item {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 80px;
+  }
+
+  /* CSS containment for better performance */
+  .card,
+  .modal,
+  .sidebar {
+    contain: layout style paint;
+  }
+
+  /* Will-change optimization for animations */
+  .animated-element {
+    will-change: transform, opacity;
+  }
+
+  .animated-element:not(:hover):not(:focus):not(.is-animating) {
+    will-change: auto;
+  }
+}
+
+/* ========================================
+   HEALTHCARE-SPECIFIC GLOBAL STYLES
+   ======================================== */
+
+@layer components {
+  /* Emergency indicator animation */
+  @keyframes emergency-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+    }
+  }
+
+  /* Critical data highlight */
+  .critical-data {
+    position: relative;
+  }
+
+  .critical-data::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-red-500), var(--color-orange-500));
+    border-radius: var(--radius-md);
+    z-index: -1;
+    opacity: 0.1;
+  }
+
+  /* Patient safety focus ring - more prominent for healthcare */
+  .patient-safety-focus:focus-visible {
+    outline: var(--border-width-heavy) solid var(--color-red-500);
+    outline-offset: var(--space-2);
+    box-shadow: 0 0 0 6px rgba(211, 47, 47, 0.25);
+  }
+}
+
+/* ========================================
+   MODERN VIEWPORT UNITS
+   ======================================== */
+
+@layer utilities {
+  /* Dynamic viewport units for mobile browsers */
+  .h-screen-small { height: 100svh; }  /* Small viewport height */
+  .h-screen-large { height: 100lvh; }  /* Large viewport height */
+  .h-screen-dynamic { height: 100dvh; } /* Dynamic viewport height */
+
+  .min-h-screen-small { min-height: 100svh; }
+  .min-h-screen-large { min-height: 100lvh; }
+  .min-h-screen-dynamic { min-height: 100dvh; }
+}
+
+/* ========================================
+   DEBUGGING UTILITIES (DEVELOPMENT ONLY)
+   ======================================== */
+
+@layer utilities {
+  /* Visual debugging aids - remove in production */
+  .debug-grid {
+    background-image: 
+      linear-gradient(rgba(255, 0, 0, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: var(--space-4) var(--space-4);
+  }
+
+  .debug-container {
+    outline: 2px solid red;
+    outline-offset: -2px;
+  }
+
+  .debug-flex {
+    outline: 2px solid blue;
+    outline-offset: -2px;
+  }
+
+  .debug-grid-item {
+    outline: 2px solid green;
+    outline-offset: -2px;
+  }
+}
+
+/* ========================================
+   CUSTOM PROPERTIES FALLBACKS
+   ======================================== */
+
+@layer base {
+  /* Ensure fallbacks for older browsers */
+  :root {
+    /* Fallback fonts */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    
+    /* Fallback colors */
+    color: #212121;
+    background-color: #ffffff;
+  }
+
+  /* Progressive enhancement for modern features */
+  @supports (color: oklch(0.7 0.15 180)) {
+    :root {
+      /* Use OKLCH colors in supporting browsers */
+      --color-primary-oklch: oklch(60% 0.15 250);
+    }
+  }
+
+  @supports (color: color-mix(in srgb, red 50%, blue)) {
+    :root {
+      /* Use color mixing in supporting browsers */
+      --color-mixed-accent: color-mix(in srgb, var(--color-purple-500), white 20%);
+    }
+  }
+}

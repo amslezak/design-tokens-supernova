@@ -1,0 +1,354 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Design Tokens - Core visual properties
+ * 
+ * These tokens form the foundation of our healthcare-centered design system
+ * All values are carefully calibrated for accessibility and clinical efficiency
+ */
+
+@layer tokens {
+  :root {
+    /* ========================================
+       CORE COLOR TOKENS
+       ======================================== */
+    
+    /* Brand Colors - NYU Langone Purple */
+    --color-purple-50: #F3E5F5;    /* Background tint */
+    --color-purple-100: #E1BEE7;   /* Light accent */
+    --color-purple-200: #CE93D8;   /* Secondary elements */
+    --color-purple-300: #BA68C8;   /* Interactive hover */
+    --color-purple-400: #AB47BC;   /* Focus states */
+    --color-purple-500: #5E2E84;   /* NYU Langone Purple - Primary brand */
+    --color-purple-600: #7B1FA2;   /* Active states */
+    --color-purple-700: #6A1B9A;   /* Dark variant */
+    --color-purple-800: #4A148C;   /* High contrast text */
+    --color-purple-900: #2E0549;   /* Maximum contrast */
+
+    /* Healthcare Blue */
+    --color-blue-50: #E3F2FD;      /* Subtle backgrounds */
+    --color-blue-100: #BBDEFB;     /* Info alerts background */
+    --color-blue-200: #90CAF9;     /* Secondary buttons */
+    --color-blue-300: #64B5F6;     /* Links hover */
+    --color-blue-400: #42A5F5;     /* Interactive elements */
+    --color-blue-500: #00A1DF;     /* Healthcare Blue - Secondary brand */
+    --color-blue-600: #1E88E5;     /* Active links */
+    --color-blue-700: #1976D2;     /* Primary text links */
+    --color-blue-800: #1565C0;     /* Focus indicators */
+    --color-blue-900: #0D47A1;     /* High contrast */
+
+    /* Gray Scale - Carefully calibrated for healthcare readability */
+    --color-gray-0: #FFFFFF;       /* Pure white - Primary background */
+    --color-gray-50: #FAFAFA;      /* Subtle background */
+    --color-gray-100: #F5F5F5;     /* Secondary background */
+    --color-gray-200: #EEEEEE;     /* Tertiary background */
+    --color-gray-300: #E0E0E0;     /* Borders */
+    --color-gray-400: #BDBDBD;     /* Disabled text */
+    --color-gray-500: #9E9E9E;     /* Secondary text */
+    --color-gray-600: #757575;     /* Tertiary text */
+    --color-gray-700: #616161;     /* Icons */
+    --color-gray-800: #424242;     /* Secondary text */
+    --color-gray-900: #212121;     /* Primary text - 12.6:1 contrast */
+    --color-gray-1000: #000000;    /* Pure black - Maximum contrast */
+
+    /* Semantic Colors - Success */
+    --color-green-50: #E8F5E9;     /* Success background */
+    --color-green-100: #C8E6C9;    /* Light success */
+    --color-green-500: #4CAF50;    /* Success default */
+    --color-green-700: #388E3C;    /* Success text */
+    --color-green-900: #1B5E20;    /* Success emphasis */
+
+    /* Semantic Colors - Warning */
+    --color-orange-50: #FFF3E0;    /* Warning background */
+    --color-orange-100: #FFE0B2;   /* Light warning */
+    --color-orange-500: #FF9800;   /* Warning default */
+    --color-orange-700: #F57C00;   /* Warning text - WCAG AA */
+    --color-orange-900: #E65100;   /* Warning emphasis */
+
+    /* Semantic Colors - Error */
+    --color-red-50: #FFEBEE;      /* Error background */
+    --color-red-100: #FFCDD2;     /* Light error */
+    --color-red-500: #F44336;     /* Error default */
+    --color-red-700: #D32F2F;     /* Error text - WCAG AA */
+    --color-red-900: #B71C1C;     /* Error emphasis */
+
+    /* Semantic Colors - Information */
+    --color-teal-50: #E0F2F1;     /* Info background */
+    --color-teal-100: #B2DFDB;    /* Light info */
+    --color-teal-500: #009688;    /* Info default */
+    --color-teal-700: #00796B;    /* Info text */
+    --color-teal-900: #004D40;    /* Info emphasis */
+
+    /* Healthcare-Specific Colors - Clinical Status Indicators */
+    --color-status-stable: #2E7D32;      /* Normal vitals, stable condition */
+    --color-status-caution: #F57C00;     /* Requires attention */
+    --color-status-critical: #D32F2F;    /* Critical, urgent */
+    --color-status-unknown: #757575;     /* Data unavailable */
+
+    /* Healthcare-Specific Colors - Medical Data Categories */
+    --color-data-medication: #1976D2;    /* Medications, prescriptions */
+    --color-data-vitals: #7B1FA2;        /* Vital signs */
+    --color-data-labs: #00796B;          /* Laboratory results */
+    --color-data-imaging: #5D4037;       /* Radiology, imaging */
+    --color-data-notes: #455A64;         /* Clinical notes */
+
+    /* ========================================
+       TYPOGRAPHY TOKENS
+       ======================================== */
+
+    /* Font Families - Optimized for healthcare interfaces */
+    --font-family-primary: 'Benton Sans', -apple-system, BlinkMacSystemFont, 
+                           'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-secondary: 'Source Serif Pro', Georgia, 'Times New Roman', 
+                             Times, serif;
+    --font-family-mono: 'Source Code Pro', Monaco, Consolas, 'Courier New', 
+                        monospace;
+
+    /* Font Sizes - Minimum 16px for body text */
+    --font-size-xs: 0.75rem;    /* 12px - Legal text only */
+    --font-size-sm: 0.875rem;   /* 14px - Secondary text */
+    --font-size-base: 1rem;     /* 16px - Body text */
+    --font-size-lg: 1.125rem;   /* 18px - Enhanced readability */
+    --font-size-xl: 1.25rem;    /* 20px - Subheadings */
+    --font-size-2xl: 1.5rem;    /* 24px - Section headers */
+    --font-size-3xl: 1.875rem;  /* 30px - Page headers */
+    --font-size-4xl: 2.25rem;   /* 36px - Major headers */
+    --font-size-5xl: 3rem;      /* 48px - Hero text */
+
+    /* Fluid Font Sizes - Responsive scaling */
+    --font-size-fluid-sm: clamp(0.875rem, 2vw, 1rem);
+    --font-size-fluid-base: clamp(1rem, 2.5vw, 1.125rem);
+    --font-size-fluid-lg: clamp(1.25rem, 3vw, 1.5rem);
+    --font-size-fluid-xl: clamp(1.875rem, 4vw, 2.25rem);
+
+    /* Font Weights - Limited for clarity */
+    --font-weight-normal: 400;   /* Body text */
+    --font-weight-medium: 500;   /* Emphasis */
+    --font-weight-semibold: 600; /* Subheadings */
+    --font-weight-bold: 700;     /* Headers */
+
+    /* Line Heights - Optimized for readability */
+    --line-height-tight: 1.25;   /* Headers */
+    --line-height-normal: 1.5;   /* Body text */
+    --line-height-relaxed: 1.75; /* Long-form content */
+    --line-height-loose: 2;      /* Enhanced accessibility */
+
+    /* Letter Spacing - Subtle adjustments */
+    --letter-spacing-tight: -0.025em;  /* Display text */
+    --letter-spacing-normal: 0;        /* Body text */
+    --letter-spacing-wide: 0.025em;    /* All caps */
+    --letter-spacing-wider: 0.05em;    /* Labels */
+
+    /* ========================================
+       SPACING TOKENS
+       ======================================== */
+
+    /* 8px Grid System - Consistent spatial relationships */
+    --space-0: 0;          /* 0px */
+    --space-1: 0.25rem;    /* 4px */
+    --space-2: 0.5rem;     /* 8px - Base unit */
+    --space-3: 0.75rem;    /* 12px */
+    --space-4: 1rem;       /* 16px */
+    --space-5: 1.25rem;    /* 20px */
+    --space-6: 1.5rem;     /* 24px */
+    --space-7: 1.75rem;    /* 28px */
+    --space-8: 2rem;       /* 32px */
+    --space-9: 2.5rem;     /* 40px */
+    --space-10: 3rem;      /* 48px */
+    --space-11: 3.5rem;    /* 56px */
+    --space-12: 4rem;      /* 64px */
+    --space-14: 5rem;      /* 80px */
+    --space-16: 6rem;      /* 96px */
+    --space-20: 8rem;      /* 128px */
+
+    /* Component Padding */
+    --space-component-xs: var(--space-2);   /* Compact components */
+    --space-component-sm: var(--space-3);   /* Small components */
+    --space-component-md: var(--space-4);   /* Default components */
+    --space-component-lg: var(--space-6);   /* Spacious components */
+    --space-component-xl: var(--space-8);   /* Hero sections */
+
+    /* Section Spacing */
+    --space-section-xs: var(--space-8);     /* Between related content */
+    --space-section-sm: var(--space-10);    /* Between sections */
+    --space-section-md: var(--space-12);    /* Major sections */
+    --space-section-lg: var(--space-16);    /* Page sections */
+    --space-section-xl: var(--space-20);    /* Hero spacing */
+
+    /* ========================================
+       SIZING TOKENS
+       ======================================== */
+
+    /* Minimum Touch Target Sizes - WCAG 2.1 Compliant */
+    --size-touch-minimum: 1.5rem;      /* 24px - WCAG 2.2 AA */
+    --size-touch-standard: 2.75rem;    /* 44px - WCAG 2.1 AAA */
+    --size-touch-comfortable: 3rem;    /* 48px - Recommended */
+    --size-touch-large: 3.5rem;        /* 56px - Critical actions */
+
+    /* Icon Dimensions */
+    --size-icon-xs: 1rem;       /* 16px - Inline icons */
+    --size-icon-sm: 1.25rem;    /* 20px - Button icons */
+    --size-icon-md: 1.5rem;     /* 24px - Default */
+    --size-icon-lg: 2rem;       /* 32px - Feature icons */
+    --size-icon-xl: 2.5rem;     /* 40px - Hero icons */
+    --size-icon-2xl: 3rem;      /* 48px - Illustrations */
+
+    /* Standard Component Heights */
+    --size-component-xs: 2rem;      /* 32px - Compact inputs */
+    --size-component-sm: 2.5rem;    /* 40px - Small buttons */
+    --size-component-md: 3rem;      /* 48px - Default inputs */
+    --size-component-lg: 3.5rem;    /* 56px - Large buttons */
+    --size-component-xl: 4rem;      /* 64px - Hero CTAs */
+
+    /* Container Maximum Widths */
+    --size-container-xs: 20rem;     /* 320px - Mobile minimum */
+    --size-container-sm: 30rem;     /* 480px - Small devices */
+    --size-container-md: 48rem;     /* 768px - Tablets */
+    --size-container-lg: 64rem;     /* 1024px - Desktop */
+    --size-container-xl: 80rem;     /* 1280px - Wide desktop */
+    --size-container-2xl: 96rem;    /* 1536px - Full HD */
+    --size-container-max: 120rem;   /* 1920px - Maximum width */
+
+    /* ========================================
+       BORDER TOKENS
+       ======================================== */
+
+    /* Border Width Scale */
+    --border-width-none: 0;         /* No border */
+    --border-width-thin: 1px;       /* Default borders */
+    --border-width-medium: 2px;     /* Emphasis borders */
+    --border-width-thick: 3px;      /* Strong borders */
+    --border-width-heavy: 4px;      /* Focus indicators */
+
+    /* Border Radius Scale */
+    --radius-none: 0;               /* Sharp corners */
+    --radius-sm: 0.25rem;          /* 4px - Subtle rounding */
+    --radius-md: 0.5rem;           /* 8px - Default */
+    --radius-lg: 0.75rem;          /* 12px - Cards */
+    --radius-xl: 1rem;             /* 16px - Modals */
+    --radius-2xl: 1.5rem;          /* 24px - Large components */
+    --radius-full: 9999px;         /* Pills, badges */
+    --radius-circle: 50%;          /* Perfect circles */
+
+    /* ========================================
+       SHADOW TOKENS
+       ======================================== */
+
+    /* Elevation Scale - Light Mode */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);        /* Subtle lift */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);        /* Cards */
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);        /* Dropdowns */
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.16);       /* Modals */
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.20);      /* Popovers */
+    --shadow-2xl: 0 16px 32px rgba(0, 0, 0, 0.24);     /* Elevated panels */
+
+    /* Inner Shadows */
+    --shadow-inner-sm: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+    --shadow-inner-md: inset 0 2px 4px rgba(0, 0, 0, 0.08);
+
+    /* Focus Shadow */
+    --shadow-focus: 0 0 0 3px rgba(94, 46, 132, 0.25); /* Purple focus ring */
+
+    /* ========================================
+       MOTION TOKENS
+       ======================================== */
+
+    /* Animation Durations */
+    --duration-instant: 0ms;        /* No animation */
+    --duration-fast: 150ms;         /* Micro-interactions */
+    --duration-normal: 300ms;       /* Default transitions */
+    --duration-slow: 500ms;         /* Complex animations */
+    --duration-slower: 700ms;       /* Page transitions */
+    --duration-slowest: 1000ms;     /* Special effects */
+
+    /* Easing Functions */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    /* Standard Transitions */
+    --transition-colors: color, background-color, border-color;
+    --transition-opacity: opacity;
+    --transition-transform: transform;
+    --transition-all: all;
+
+    /* Timing Combinations */
+    --transition-timing-normal: var(--duration-normal) var(--ease-in-out);
+    --transition-timing-fast: var(--duration-fast) var(--ease-out);
+
+    /* ========================================
+       BREAKPOINT TOKENS
+       ======================================== */
+
+    /* Viewport Breakpoints - For layout decisions */
+    --breakpoint-xs: 0;          /* Mobile first */
+    --breakpoint-sm: 640px;      /* Small tablets */
+    --breakpoint-md: 768px;      /* Tablets */
+    --breakpoint-lg: 1024px;     /* Desktop */
+    --breakpoint-xl: 1280px;     /* Wide desktop */
+    --breakpoint-2xl: 1536px;    /* Full HD */
+
+    /* Container Padding */
+    --container-padding-xs: var(--space-4);  /* Mobile */
+    --container-padding-sm: var(--space-6);  /* Tablet */
+    --container-padding-md: var(--space-8);  /* Desktop */
+    --container-padding-lg: var(--space-10); /* Wide */
+
+    /* Container Breakpoints - For component adaptations */
+    --cq-xs: 20rem;     /* 320px - Minimum component width */
+    --cq-sm: 25rem;     /* 400px - Small components */
+    --cq-md: 30rem;     /* 480px - Medium components */
+    --cq-lg: 40rem;     /* 640px - Large components */
+    --cq-xl: 50rem;     /* 800px - Extra large components */
+    --cq-2xl: 60rem;    /* 960px - Full-width components */
+
+    /* Container Names - Semantic */
+    --container-card: card-container;
+    --container-sidebar: sidebar-container;
+    --container-content: content-container;
+    --container-modal: modal-container;
+    --container-form: form-container;
+
+    /* Container Types */
+    --container-type-default: inline-size;  /* Width-based queries */
+    --container-type-size: size;            /* Width and height queries */
+    --container-type-normal: normal;        /* No containment */
+
+    /* ========================================
+       ACCESSIBILITY TOKENS
+       ======================================== */
+
+    /* Accessibility-First Tokens */
+    --focus-ring-width: 3px;
+    --focus-ring-color: var(--color-blue-500);
+    --focus-ring-offset: 2px;
+    --minimum-touch-target: 44px;
+    --minimum-text-size: 16px;
+    --minimum-contrast-ratio: 4.5;
+  }
+
+  /* ========================================
+     DARK THEME OVERRIDES
+     ======================================== */
+
+  [data-theme="dark"] {
+    /* Invert text and background colors for dark mode */
+    --color-text-primary: var(--color-gray-50);
+    --color-text-secondary: var(--color-gray-300);
+    --color-text-tertiary: var(--color-gray-400);
+    --color-text-disabled: var(--color-gray-600);
+    
+    --color-background-primary: var(--color-gray-900);
+    --color-background-secondary: var(--color-gray-800);
+    --color-background-tertiary: var(--color-gray-700);
+    
+    /* Adjust shadows for dark mode */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.7);
+    --shadow-2xl: 0 16px 32px rgba(0, 0, 0, 0.8);
+  }
+}

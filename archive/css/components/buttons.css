@@ -1,0 +1,436 @@
+/**
+ * NYU Langone Health Design System v1.0
+ * Button Components
+ * 
+ * Accessible, healthcare-optimized button components with proper touch targets
+ * and clear visual hierarchy for critical healthcare interfaces
+ */
+
+@layer components {
+  /* ========================================
+     BASE BUTTON STYLES
+     ======================================== */
+
+  .btn {
+    /* Layout */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    
+    /* Sizing - ensures WCAG 2.1 AAA compliance */
+    min-height: var(--size-touch-standard);
+    padding: var(--space-3) var(--space-6);
+    
+    /* Typography */
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    
+    /* Appearance */
+    border: var(--border-width-medium) solid transparent;
+    border-radius: var(--radius-md);
+    background: transparent;
+    cursor: pointer;
+    
+    /* Interactions */
+    transition: all var(--duration-normal) var(--ease-in-out);
+    user-select: none;
+    
+    /* Prevent double-tap zoom on mobile */
+    touch-action: manipulation;
+  }
+
+  /* Focus state - highly visible for accessibility */
+  .btn:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+  }
+
+  /* Disabled state */
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Loading state */
+  .btn.is-loading {
+    pointer-events: none;
+    position: relative;
+    color: transparent;
+  }
+
+  .btn.is-loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    border-right-color: transparent;
+    animation: button-loading 1s linear infinite;
+  }
+
+  @keyframes button-loading {
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+
+  /* ========================================
+     BUTTON SIZES
+     ======================================== */
+
+  .btn-xs {
+    min-height: var(--size-touch-minimum);
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--font-size-xs);
+    gap: var(--space-1);
+  }
+
+  .btn-sm {
+    min-height: var(--size-component-sm);
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+    gap: var(--space-1);
+  }
+
+  .btn-md {
+    /* Default size - already defined in .btn */
+  }
+
+  .btn-lg {
+    min-height: var(--size-component-lg);
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+    gap: var(--space-3);
+  }
+
+  .btn-xl {
+    min-height: var(--size-component-xl);
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--font-size-xl);
+    gap: var(--space-3);
+  }
+
+  /* ========================================
+     BUTTON VARIANTS
+     ======================================== */
+
+  /* Primary Button - Main actions */
+  .btn-primary {
+    background: var(--color-interactive-primary);
+    color: var(--color-text-inverse);
+    border-color: var(--color-interactive-primary);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: var(--color-interactive-primary-hover);
+    border-color: var(--color-interactive-primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:active:not(:disabled) {
+    background: var(--color-interactive-primary-active);
+    border-color: var(--color-interactive-primary-active);
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Secondary Button - Alternative actions */
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-interactive-primary);
+    border-color: var(--color-interactive-primary);
+  }
+
+  .btn-secondary:hover:not(:disabled) {
+    background: var(--color-purple-50);
+    color: var(--color-interactive-primary-hover);
+    border-color: var(--color-interactive-primary-hover);
+  }
+
+  .btn-secondary:active:not(:disabled) {
+    background: var(--color-purple-100);
+    color: var(--color-interactive-primary-active);
+    border-color: var(--color-interactive-primary-active);
+  }
+
+  /* Success Button - Positive actions */
+  .btn-success {
+    background: var(--color-green-500);
+    color: var(--color-text-inverse);
+    border-color: var(--color-green-500);
+  }
+
+  .btn-success:hover:not(:disabled) {
+    background: var(--color-green-700);
+    border-color: var(--color-green-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-success:active:not(:disabled) {
+    background: var(--color-green-900);
+    border-color: var(--color-green-900);
+    transform: translateY(0);
+  }
+
+  /* Warning Button - Caution actions */
+  .btn-warning {
+    background: var(--color-orange-500);
+    color: var(--color-text-inverse);
+    border-color: var(--color-orange-500);
+  }
+
+  .btn-warning:hover:not(:disabled) {
+    background: var(--color-orange-700);
+    border-color: var(--color-orange-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-warning:active:not(:disabled) {
+    background: var(--color-orange-900);
+    border-color: var(--color-orange-900);
+    transform: translateY(0);
+  }
+
+  /* Danger Button - Destructive actions */
+  .btn-danger {
+    background: var(--color-red-500);
+    color: var(--color-text-inverse);
+    border-color: var(--color-red-500);
+  }
+
+  .btn-danger:hover:not(:disabled) {
+    background: var(--color-red-700);
+    border-color: var(--color-red-700);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-danger:active:not(:disabled) {
+    background: var(--color-red-900);
+    border-color: var(--color-red-900);
+    transform: translateY(0);
+  }
+
+  /* Ghost Button - Minimal styling */
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: transparent;
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-background-secondary);
+    color: var(--color-text-primary);
+  }
+
+  .btn-ghost:active:not(:disabled) {
+    background: var(--color-background-tertiary);
+  }
+
+  /* Link Button - Styled like a link */
+  .btn-link {
+    background: transparent;
+    color: var(--color-text-link);
+    border-color: transparent;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    padding: var(--space-1) var(--space-2);
+    min-height: auto;
+  }
+
+  .btn-link:hover:not(:disabled) {
+    color: var(--color-text-link-hover);
+    text-decoration-thickness: 2px;
+    background: transparent;
+  }
+
+  /* ========================================
+     BUTTON GROUPS
+     ======================================== */
+
+  .btn-group {
+    display: inline-flex;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-group .btn {
+    border-radius: 0;
+    border-right-width: 0;
+    margin: 0;
+  }
+
+  .btn-group .btn:first-child {
+    border-top-left-radius: var(--radius-md);
+    border-bottom-left-radius: var(--radius-md);
+  }
+
+  .btn-group .btn:last-child {
+    border-top-right-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    border-right-width: var(--border-width-medium);
+  }
+
+  .btn-group .btn:focus-visible {
+    z-index: 1;
+    position: relative;
+  }
+
+  /* ========================================
+     HEALTHCARE-SPECIFIC BUTTON VARIANTS
+     ======================================== */
+
+  /* Emergency Button - Maximum visibility */
+  .btn-emergency {
+    background: var(--color-status-critical);
+    color: var(--color-text-inverse);
+    border-color: var(--color-status-critical);
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    animation: emergency-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes emergency-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(211, 47, 47, 0);
+    }
+  }
+
+  .btn-emergency:hover:not(:disabled) {
+    background: var(--color-red-700);
+    border-color: var(--color-red-700);
+    animation: none;
+    transform: scale(1.05);
+  }
+
+  /* Status Button - For patient status updates */
+  .btn-status {
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-wide);
+    min-width: 6rem;
+  }
+
+  .btn-status.stable {
+    background: var(--color-status-stable);
+    color: var(--color-text-inverse);
+    border-color: var(--color-status-stable);
+  }
+
+  .btn-status.caution {
+    background: var(--color-status-caution);
+    color: var(--color-text-inverse);
+    border-color: var(--color-status-caution);
+  }
+
+  .btn-status.critical {
+    background: var(--color-status-critical);
+    color: var(--color-text-inverse);
+    border-color: var(--color-status-critical);
+  }
+
+  /* ========================================
+     ICON BUTTONS
+     ======================================== */
+
+  .btn-icon {
+    padding: var(--space-3);
+    min-width: var(--size-touch-standard);
+    min-height: var(--size-touch-standard);
+    border-radius: var(--radius-circle);
+  }
+
+  .btn-icon-sm {
+    padding: var(--space-2);
+    min-width: var(--size-touch-minimum);
+    min-height: var(--size-touch-minimum);
+  }
+
+  .btn-icon-lg {
+    padding: var(--space-4);
+    min-width: var(--size-touch-large);
+    min-height: var(--size-touch-large);
+  }
+
+  /* ========================================
+     FULL-WIDTH BUTTONS
+     ======================================== */
+
+  .btn-full {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ========================================
+     ACCESSIBILITY ENHANCEMENTS
+     ======================================== */
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .btn {
+      border-width: var(--border-width-thick);
+    }
+    
+    .btn:focus-visible {
+      outline: var(--border-width-heavy) solid CanvasText;
+      outline-offset: var(--space-1);
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .btn {
+      transition: none;
+    }
+    
+    .btn:hover:not(:disabled) {
+      transform: none;
+    }
+    
+    .btn-emergency {
+      animation: none;
+    }
+  }
+
+  /* ========================================
+     DARK THEME ADJUSTMENTS
+     ======================================== */
+
+  [data-theme="dark"] {
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-purple-300);
+      border-color: var(--color-purple-300);
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: rgba(206, 147, 216, 0.1);
+      color: var(--color-purple-200);
+      border-color: var(--color-purple-200);
+    }
+
+    .btn-ghost:hover:not(:disabled) {
+      background: var(--color-gray-800);
+    }
+  }
+}
