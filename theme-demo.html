@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Token Light/Dark Theme Demo</title>
+    
+    <!-- Load design tokens -->
+    <link rel="stylesheet" href="build/css/variables.css">
+    
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--nyulh-color-slate-50);
+            color: var(--nyulh-color-slate-900);
+            min-height: 100vh;
+            transition: all 0.3s ease;
+            padding: 2rem;
+        }
+        
+        [data-theme="dark"] body {
+            background: var(--nyulh-color-slate-900);
+            color: var(--nyulh-color-slate-100);
+        }
+        
+        .demo-container {
+            background: var(--nyulh-color-white);
+            border: 1px solid var(--nyulh-color-slate-200);
+            border-radius: 16px;
+            padding: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        [data-theme="dark"] .demo-container {
+            background: var(--nyulh-color-slate-800);
+            border-color: var(--nyulh-color-slate-700);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .demo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .demo-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--nyulh-color-slate-900);
+        }
+        
+        [data-theme="dark"] .demo-title {
+            color: var(--nyulh-color-slate-100);
+        }
+        
+        .demo-subtitle {
+            font-size: 1.25rem;
+            color: var(--nyulh-color-slate-600);
+            margin-bottom: 2rem;
+        }
+        
+        [data-theme="dark"] .demo-subtitle {
+            color: var(--nyulh-color-slate-400);
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle-section {
+            background: var(--nyulh-color-slate-50);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        [data-theme="dark"] .theme-toggle-section {
+            background: var(--nyulh-color-slate-700);
+        }
+        
+        .theme-toggle {
+            background: var(--nyulh-core-color-purple-500);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 1rem;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--nyulh-core-color-purple-600);
+            transform: translateY(-2px);
+        }
+        
+        .theme-indicator {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--nyulh-color-green-100);
+            color: var(--nyulh-color-green-800);
+            border-radius: 8px;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+        
+        [data-theme="dark"] .theme-indicator {
+            background: var(--nyulh-color-green-900);
+            color: var(--nyulh-color-green-100);
+        }
+        
+        /* Demo Button */
+        .demo-button {
+            background: var(--nyulh-core-color-purple-500);
+            color: white;
+            border: none;
+            padding: 1.5rem 3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(255, 165, 0, 0.3);
+            margin: 1rem;
+            min-width: 300px;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(255, 165, 0, 0.4);
+        }
+        
+        /* Token Display Grid */
+        .token-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .token-card {
+            background: var(--nyulh-color-slate-50);
+            border: 1px solid var(--nyulh-color-slate-200);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        [data-theme="dark"] .token-card {
+            background: var(--nyulh-color-slate-700);
+            border-color: var(--nyulh-color-slate-600);
+        }
+        
+        .token-card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--nyulh-color-slate-900);
+        }
+        
+        [data-theme="dark"] .token-card-title {
+            color: var(--nyulh-color-slate-100);
+        }
+        
+        .token-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: var(--nyulh-color-white);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--nyulh-color-slate-200);
+        }
+        
+        [data-theme="dark"] .token-item {
+            background: var(--nyulh-color-slate-800);
+            border-color: var(--nyulh-color-slate-600);
+        }
+        
+        .token-name {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--nyulh-color-slate-700);
+        }
+        
+        [data-theme="dark"] .token-name {
+            color: var(--nyulh-color-slate-300);
+        }
+        
+        .token-value {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--nyulh-core-color-purple-600);
+            background: var(--nyulh-core-color-purple-50);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+        
+        [data-theme="dark"] .token-value {
+            color: var(--nyulh-core-color-purple-300);
+            background: var(--nyulh-core-color-purple-900);
+        }
+        
+        .color-swatch {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            border: 1px solid var(--nyulh-color-slate-300);
+            margin-left: 0.5rem;
+        }
+        
+        /* Side by side comparison */
+        .theme-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .theme-preview {
+            border: 2px solid var(--nyulh-color-slate-200);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        [data-theme="dark"] .theme-preview {
+            border-color: var(--nyulh-color-slate-600);
+        }
+        
+        .theme-preview-header {
+            padding: 1rem;
+            background: var(--nyulh-color-slate-100);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        [data-theme="dark"] .theme-preview-header {
+            background: var(--nyulh-color-slate-600);
+        }
+        
+        .theme-preview-content {
+            padding: 2rem;
+            min-height: 200px;
+        }
+        
+        .theme-preview.light .theme-preview-content {
+            background: var(--nyulh-color-white);
+            color: var(--nyulh-color-slate-900);
+        }
+        
+        .theme-preview.dark .theme-preview-content {
+            background: var(--nyulh-color-slate-900);
+            color: var(--nyulh-color-slate-100);
+        }
+        
+        /* Instructions */
+        .instructions {
+            background: var(--nyulh-color-blue-50);
+            border: 2px solid var(--nyulh-color-blue-200);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        [data-theme="dark"] .instructions {
+            background: var(--nyulh-color-blue-900);
+            border-color: var(--nyulh-color-blue-700);
+        }
+        
+        .instructions-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--nyulh-color-blue-800);
+            margin-bottom: 1rem;
+        }
+        
+        [data-theme="dark"] .instructions-title {
+            color: var(--nyulh-color-blue-200);
+        }
+        
+        .instructions-content {
+            color: var(--nyulh-color-blue-700);
+            line-height: 1.6;
+        }
+        
+        [data-theme="dark"] .instructions-content {
+            color: var(--nyulh-color-blue-300);
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .demo-container {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+            
+            .theme-comparison {
+                grid-template-columns: 1fr;
+            }
+            
+            .demo-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1 class="demo-title">🎨 Light/Dark Theme Demo</h1>
+            <p class="demo-subtitle">Test design token theme switching for Figma → Supernova → Style Dictionary pipeline</p>
+        </div>
+        
+        <!-- Theme Toggle Section -->
+        <div class="theme-toggle-section">
+            <h2>Theme Control</h2>
+            <button class="theme-toggle" onclick="setTheme('light')">☀️ Light Mode</button>
+            <button class="theme-toggle" onclick="setTheme('dark')">🌙 Dark Mode</button>
+            <span class="theme-indicator" id="theme-indicator">Light Theme Active</span>
+        </div>
+        
+        <!-- Demo Button -->
+        <div style="text-align: center; margin: 3rem 0;">
+            <button class="demo-button" id="demo-button">
+                🎨 Primary Demo Button
+            </button>
+            <p style="margin-top: 1rem; color: var(--nyulh-color-slate-600);">
+                This button uses <code>--nyulh-core-color-purple-500</code> token
+            </p>
+        </div>
+        
+        <!-- Token Display -->
+        <div class="token-grid">
+            <div class="token-card">
+                <h3 class="token-card-title">🔍 Key Color Tokens</h3>
+                <div class="token-item">
+                    <span class="token-name">--nyulh-core-color-purple-500</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value" id="purple-500-value">Loading...</span>
+                        <div class="color-swatch" id="purple-500-swatch" style="background-color: var(--nyulh-core-color-purple-500);"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--nyulh-core-color-slate-900</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value" id="slate-900-value">#0f172b</span>
+                        <div class="color-swatch" id="slate-900-swatch" style="background-color: var(--nyulh-core-color-slate-900);"></div>
+                    </div>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">--nyulh-core-color-slate-100</span>
+                    <div style="display: flex; align-items: center;">
+                        <span class="token-value" id="slate-100-value">#f1f5f9</span>
+                        <div class="color-swatch" id="slate-100-swatch" style="background-color: var(--nyulh-core-color-slate-100);"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="token-card">
+                <h3 class="token-card-title">📊 Theme Information</h3>
+                <div class="token-item">
+                    <span class="token-name">Current Theme</span>
+                    <span class="token-value" id="current-theme">Light</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">CSS Files Loaded</span>
+                    <span class="token-value">build/css/variables.css</span>
+                </div>
+                <div class="token-item">
+                    <span class="token-name">Last Updated</span>
+                    <span class="token-value" id="last-updated">Ready for demo</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Side by Side Theme Comparison -->
+        <h2 style="text-align: center; margin: 3rem 0 2rem 0; color: var(--nyulh-color-slate-700);">Theme Comparison</h2>
+        <div class="theme-comparison">
+            <div class="theme-preview light">
+                <div class="theme-preview-header">Light Theme Preview</div>
+                <div class="theme-preview-content">
+                    <button style="background: var(--nyulh-core-color-purple-500); color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600;">
+                        Light Theme Button
+                    </button>
+                    <p style="margin-top: 1rem; color: #0f172b;">
+                        This shows how the light theme looks with the current token values.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="theme-preview dark">
+                <div class="theme-preview-header">Dark Theme Preview</div>
+                <div class="theme-preview-content">
+                    <button style="background: var(--nyulh-core-color-purple-500); color: white; border: none; padding: 1rem 2rem; border-radius: 8px; font-weight: 600;">
+                        Dark Theme Button
+                    </button>
+                    <p style="margin-top: 1rem; color: #f1f5f9;">
+                        This shows how the dark theme looks with the current token values.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3 class="instructions-title">🎬 Loom Recording Instructions</h3>
+            <div class="instructions-content">
+                <strong>For the demo recording:</strong><br>
+                1. Show the current light theme state<br>
+                2. Change a color token (like purple-500) in Figma<br>
+                3. Export from Supernova to GitHub<br>
+                4. Wait for GitHub Actions to rebuild tokens<br>
+                5. Refresh this page to see the updated colors<br>
+                6. Toggle between light and dark themes to show both work<br>
+                7. Point out that the token values update automatically in both themes
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme management
+        let currentTheme = 'light';
+        
+        function setTheme(theme) {
+            currentTheme = theme;
+            const html = document.documentElement;
+            const indicator = document.getElementById('theme-indicator');
+            const themeDisplay = document.getElementById('current-theme');
+            
+            if (theme === 'dark') {
+                html.setAttribute('data-theme', 'dark');
+                indicator.textContent = 'Dark Theme Active';
+                themeDisplay.textContent = 'Dark';
+            } else {
+                html.removeAttribute('data-theme');
+                indicator.textContent = 'Light Theme Active';
+                themeDisplay.textContent = 'Light';
+            }
+            
+            // Save preference
+            localStorage.setItem('theme', theme);
+            updateTokenValues();
+            updateLastUpdated();
+        }
+        
+        // Get computed CSS custom property value
+        function getTokenValue(tokenName) {
+            const styles = getComputedStyle(document.documentElement);
+            return styles.getPropertyValue(tokenName).trim();
+        }
+        
+        // Update displayed token values
+        function updateTokenValues() {
+            const tokens = [
+                { name: '--nyulh-core-color-purple-500', valueId: 'purple-500-value', swatchId: 'purple-500-swatch' },
+                { name: '--nyulh-core-color-slate-900', valueId: 'slate-900-value', swatchId: 'slate-900-swatch' },
+                { name: '--nyulh-core-color-slate-100', valueId: 'slate-100-value', swatchId: 'slate-100-swatch' }
+            ];
+            
+            tokens.forEach(token => {
+                const value = getTokenValue(token.name);
+                const valueEl = document.getElementById(token.valueId);
+                const swatchEl = document.getElementById(token.swatchId);
+                
+                if (valueEl && value) {
+                    valueEl.textContent = value;
+                }
+                if (swatchEl) {
+                    swatchEl.style.backgroundColor = value;
+                }
+            });
+        }
+        
+        function updateLastUpdated() {
+            const lastUpdatedEl = document.getElementById('last-updated');
+            if (lastUpdatedEl) {
+                lastUpdatedEl.textContent = new Date().toLocaleTimeString();
+            }
+        }
+        
+        // Initialize theme from localStorage
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        }
+        
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'l' || e.key === 'L') {
+                setTheme('light');
+            } else if (e.key === 'd' || e.key === 'D') {
+                setTheme('dark');
+            } else if (e.key === 'r' || e.key === 'R') {
+                updateTokenValues();
+                updateLastUpdated();
+                console.log('🔄 Token values refreshed');
+            }
+        });
+        
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeTheme();
+            updateTokenValues();
+            
+            // Auto-refresh token values every 5 seconds during demo
+            setInterval(() => {
+                updateTokenValues();
+            }, 5000);
+            
+            console.log('✅ Theme Demo initialized');
+            console.log('Keyboard shortcuts: L (light), D (dark), R (refresh)');
+        });
+    </script>
+</body>
+</html>

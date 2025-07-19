@@ -1,0 +1,72 @@
+name: Build Design Tokens
+
+on:
+  push:
+    paths:
+      - 'design-tokens.json'
+    branches: [ main, develop ]
+  pull_request:
+    paths:
+      - 'design-tokens.json'
+  workflow_dispatch:
+    inputs:
+      force_build:
+        description: 'Force rebuild all tokens'
+        required: false
+        default: 'false'
+
+jobs:
+  build-tokens:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Clean build directory
+      run: npm run clean
+
+    - name: Build design tokens
+      run: npm run build
+
+    - name: Verify output files
+      run: |
+        echo "Checking generated CSS files..."
+        ls -la build/css/
+        echo "Core tokens:"
+        head -n 10 build/css/nyulh-core.css
+        echo "Theme tokens:"
+        head -n 10 build/css/nyulh-theme.css
+
+    - name: Commit and push changes
+      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add build/css/*.css
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update design tokens CSS files
+          
+          Auto-generated from design-tokens.json changes"
+          git push
+        fi
+
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: design-tokens-css
+        path: build/css/
+        retention-days: 30

@@ -7,7 +7,8 @@
     "build": "style-dictionary build",
     "build:watch": "style-dictionary build --watch",
     "clean": "rm -rf build",
-    "dev": "npm run build:watch"
+    "dev": "npm run build:watch",
+    "validate": "node scripts/validate-tokens.js"
   },
   "keywords": [
     "design-tokens",
@@ -18,10 +19,10 @@
   ],
   "author": "NYU Langone Health",
   "license": "MIT",
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "devDependencies": {
     "style-dictionary": "^5.0.1"
-  },
-  "engines": {
-    "node": ">=16.0.0"
   }
 }

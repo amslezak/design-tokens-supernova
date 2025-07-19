@@ -1,52 +1,59 @@
 {
-  "source": ["base/**/*.json", "light/**/*.json", "dark/**/*.json"],
+  "source": ["design-tokens.json"],
   "platforms": {
-    "scss": {
-      "transformGroup": "scss",
-      "buildPath": "build/scss/",
-      "files": [{
-        "destination": "_variables.scss",
-        "format": "scss/variables",
-        "options": {
-          "outputReferences": true
-        }
-      }]
-    },
-    "css": {
+    "css-core": {
       "transformGroup": "css",
+      "prefix": "mt",
       "buildPath": "build/css/",
       "files": [{
-        "destination": "variables.css",
+        "destination": "nyulh-core.css",
         "format": "css/variables",
-        "options": {
-          "outputReferences": true
+        "filter": {
+          "attributes": {
+            "category": "Core"
+          }
         }
       }]
     },
-    "js": {
-      "transformGroup": "js",
-      "buildPath": "build/js/",
+    "css-theme": {
+      "transformGroup": "css",
+      "prefix": "mt", 
+      "buildPath": "build/css/",
       "files": [{
-        "destination": "tokens.js",
-        "format": "javascript/es6"
+        "destination": "nyulh-theme.css",
+        "format": "css/variables",
+        "filter": {
+          "attributes": {
+            "category": "Theme"
+          }
+        }
       }]
     },
-    "json": {
-      "transformGroup": "js",
-      "buildPath": "build/json/",
+    "css-components": {
+      "transformGroup": "css",
+      "prefix": "mt",
+      "buildPath": "build/css/", 
       "files": [{
-        "destination": "tokens.json",
-        "format": "json/flat"
+        "destination": "nyulh-components.css",
+        "format": "css/variables",
+        "filter": {
+          "attributes": {
+            "category": "Component"
+          }
+        }
       }]
     },
-    "react": {
-      "transformGroup": "js",
-      "buildPath": "build/react/",
+    "css-device-size": {
+      "transformGroup": "css",
+      "prefix": "mt",
+      "buildPath": "build/css/",
       "files": [{
-        "destination": "tokens.js",
-        "format": "javascript/es6",
-        "options": {
-          "outputReferences": true
+        "destination": "nyulh-device-size.css", 
+        "format": "css/variables",
+        "filter": {
+          "attributes": {
+            "category": "Breakpoint"
+          }
         }
       }]
     }
