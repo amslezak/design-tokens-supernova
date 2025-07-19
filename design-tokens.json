@@ -4,7 +4,7 @@
       "Amber": {
         "50": {
           "type": "color",
-          "value": "#fffbeb",
+          "value": "hsla(48, 100%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -12,7 +12,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#fef3c6",
+          "value": "hsla(48, 97%, 89%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -20,7 +20,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#fee685",
+          "value": "hsla(48, 98%, 76%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -28,7 +28,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#ffd230",
+          "value": "hsla(47, 100%, 59%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -36,7 +36,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#ffba00",
+          "value": "hsla(44, 100%, 50%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -44,7 +44,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#fd9a00",
+          "value": "hsla(37, 100%, 50%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -52,7 +52,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#e17100",
+          "value": "hsla(30, 100%, 44%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -60,7 +60,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#bb4d00",
+          "value": "hsla(25, 100%, 37%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -68,7 +68,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#973c00",
+          "value": "hsla(24, 100%, 30%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -76,7 +76,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#7b3306",
+          "value": "hsla(23, 91%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -84,7 +84,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#461901",
+          "value": "hsla(21, 97%, 14%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -94,7 +94,7 @@
       "Slate": {
         "50": {
           "type": "color",
-          "value": "#f8fafc",
+          "value": "hsla(210, 40%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -102,7 +102,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f1f5f9",
+          "value": "hsla(210, 40%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -110,7 +110,7 @@
         },
         "101": {
           "type": "color",
-          "value": "#f1f5f8",
+          "value": "hsla(206, 33%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -118,7 +118,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e2e8f0",
+          "value": "hsla(214, 32%, 91%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -126,7 +126,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#cad5e2",
+          "value": "hsla(212, 29%, 84%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -134,7 +134,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#90a1b9",
+          "value": "hsla(215, 23%, 65%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -142,7 +142,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#62748e",
+          "value": "hsla(215, 18%, 47%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -150,7 +150,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#45556c",
+          "value": "hsla(215, 22%, 35%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -158,7 +158,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#314158",
+          "value": "hsla(215, 28%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -166,7 +166,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#1d293d",
+          "value": "hsla(218, 36%, 18%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -174,7 +174,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#0f172b",
+          "value": "hsla(223, 48%, 11%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -182,7 +182,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#020618",
+          "value": "hsla(229, 85%, 5%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -192,7 +192,7 @@
       "Orange": {
         "50": {
           "type": "color",
-          "value": "#fff7ed",
+          "value": "hsla(33, 100%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -200,7 +200,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#ffedd4",
+          "value": "hsla(35, 100%, 92%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -208,7 +208,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#ffd6a8",
+          "value": "hsla(32, 100%, 83%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -216,7 +216,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#ffb86a",
+          "value": "hsla(31, 100%, 71%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -224,7 +224,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#ff8904",
+          "value": "hsla(32, 100%, 51%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -232,7 +232,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#ff6900",
+          "value": "hsla(25, 100%, 50%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -240,7 +240,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#f54a00",
+          "value": "hsla(18, 100%, 48%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -248,7 +248,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#ca3500",
+          "value": "hsla(16, 100%, 40%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -256,7 +256,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#9f2d00",
+          "value": "hsla(17, 100%, 31%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -264,7 +264,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#7e2a0c",
+          "value": "hsla(16, 83%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -272,7 +272,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#441306",
+          "value": "hsla(13, 84%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -282,7 +282,7 @@
       "Red": {
         "50": {
           "type": "color",
-          "value": "#fef2f2",
+          "value": "hsla(0, 86%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -290,7 +290,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#ffe2e2",
+          "value": "hsla(0, 100%, 94%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -298,7 +298,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#ffc9c9",
+          "value": "hsla(0, 100%, 89%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -306,7 +306,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#ffa2a2",
+          "value": "hsla(0, 100%, 82%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -314,7 +314,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#ff6467",
+          "value": "hsla(359, 100%, 70%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -322,7 +322,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#fb2c36",
+          "value": "hsla(357, 96%, 58%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -330,7 +330,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#e7000b",
+          "value": "hsla(357, 100%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -338,7 +338,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#c10007",
+          "value": "hsla(358, 100%, 38%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -346,7 +346,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#9f0712",
+          "value": "hsla(356, 92%, 33%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -354,7 +354,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#82181a",
+          "value": "hsla(359, 69%, 30%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -362,7 +362,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#460809",
+          "value": "hsla(359, 79%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -372,7 +372,7 @@
       "Stone": {
         "50": {
           "type": "color",
-          "value": "#fafaf9",
+          "value": "hsla(60, 9%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -380,7 +380,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f5f5f4",
+          "value": "hsla(60, 5%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -388,7 +388,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e7e5e4",
+          "value": "hsla(20, 6%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -396,7 +396,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#d6d3d1",
+          "value": "hsla(24, 6%, 83%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -404,7 +404,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#a6a09b",
+          "value": "hsla(27, 6%, 63%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -412,7 +412,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#79716b",
+          "value": "hsla(26, 6%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -420,7 +420,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#57534d",
+          "value": "hsla(36, 6%, 32%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -428,7 +428,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#44403b",
+          "value": "hsla(33, 7%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -436,7 +436,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#292524",
+          "value": "hsla(12, 6%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -444,7 +444,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#1c1917",
+          "value": "hsla(24, 10%, 10%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -452,7 +452,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#0c0a09",
+          "value": "hsla(20, 14%, 4%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -462,7 +462,7 @@
       "Zinc": {
         "50": {
           "type": "color",
-          "value": "#fafafa",
+          "value": "hsla(0, 0%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -470,7 +470,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f4f4f5",
+          "value": "hsla(240, 5%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -478,7 +478,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e4e4e7",
+          "value": "hsla(240, 6%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -486,7 +486,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#d4d4d8",
+          "value": "hsla(240, 5%, 84%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -494,7 +494,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#9f9fa9",
+          "value": "hsla(240, 5%, 64%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -502,7 +502,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#71717b",
+          "value": "hsla(240, 4%, 46%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -510,7 +510,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#52525c",
+          "value": "hsla(240, 6%, 34%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -518,7 +518,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#3f3f46",
+          "value": "hsla(240, 5%, 26%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -526,7 +526,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#27272a",
+          "value": "hsla(240, 4%, 16%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -534,7 +534,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#18181b",
+          "value": "hsla(240, 6%, 10%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -542,7 +542,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#09090b",
+          "value": "hsla(240, 10%, 4%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -552,7 +552,7 @@
       "Neutral": {
         "50": {
           "type": "color",
-          "value": "#fafafa",
+          "value": "hsla(0, 0%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -560,7 +560,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f5f5f5",
+          "value": "hsla(0, 0%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -568,7 +568,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e5e5e5",
+          "value": "hsla(0, 0%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -576,7 +576,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#d4d4d4",
+          "value": "hsla(0, 0%, 83%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -584,7 +584,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#a1a1a1",
+          "value": "hsla(0, 0%, 63%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -592,7 +592,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#737373",
+          "value": "hsla(0, 0%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -600,7 +600,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#525252",
+          "value": "hsla(0, 0%, 32%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -608,7 +608,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#404040",
+          "value": "hsla(0, 0%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -616,7 +616,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#262626",
+          "value": "hsla(0, 0%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -624,7 +624,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#171717",
+          "value": "hsla(0, 0%, 9%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -632,7 +632,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#0a0a0a",
+          "value": "hsla(0, 0%, 4%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -642,7 +642,7 @@
       "Lime": {
         "50": {
           "type": "color",
-          "value": "#f7fee7",
+          "value": "hsla(78, 92%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -650,7 +650,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#ecfcca",
+          "value": "hsla(79, 89%, 89%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -658,7 +658,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#d8f999",
+          "value": "hsla(81, 89%, 79%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -666,7 +666,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#bbf451",
+          "value": "hsla(81, 88%, 64%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -674,7 +674,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#9ae600",
+          "value": "hsla(80, 100%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -682,7 +682,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#7ccf00",
+          "value": "hsla(84, 100%, 41%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -690,7 +690,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#5ea500",
+          "value": "hsla(86, 100%, 32%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -698,7 +698,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#497d00",
+          "value": "hsla(85, 100%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -706,7 +706,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#3d6300",
+          "value": "hsla(83, 100%, 19%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -714,7 +714,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#35530e",
+          "value": "hsla(86, 71%, 19%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -722,7 +722,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#192e03",
+          "value": "hsla(89, 88%, 10%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -732,7 +732,7 @@
       "Rose": {
         "50": {
           "type": "color",
-          "value": "#fff1f2",
+          "value": "hsla(356, 100%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -740,7 +740,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#ffe4e6",
+          "value": "hsla(356, 100%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -748,7 +748,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#ffccd3",
+          "value": "hsla(352, 100%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -756,7 +756,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#ffa1ad",
+          "value": "hsla(352, 100%, 82%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -764,7 +764,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#ff637e",
+          "value": "hsla(350, 100%, 69%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -772,7 +772,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#ff2056",
+          "value": "hsla(345, 100%, 56%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -780,7 +780,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#ec003f",
+          "value": "hsla(344, 100%, 46%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -788,7 +788,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#c70036",
+          "value": "hsla(344, 100%, 39%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -796,7 +796,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#a50036",
+          "value": "hsla(340, 100%, 32%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -804,7 +804,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#8b0836",
+          "value": "hsla(339, 89%, 29%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -812,7 +812,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#4d0218",
+          "value": "hsla(342, 95%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -821,7 +821,7 @@
       },
       "black": {
         "type": "color",
-        "value": "#000000",
+        "value": "hsla(0, 0%, 0%, 1)",
         "description": "",
         "$extensions": {
           "mode": {}
@@ -830,7 +830,7 @@
       "Yellow": {
         "50": {
           "type": "color",
-          "value": "#fefce8",
+          "value": "hsla(55, 92%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -838,7 +838,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#fef9c2",
+          "value": "hsla(55, 97%, 88%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -846,7 +846,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#fff085",
+          "value": "hsla(53, 100%, 76%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -854,7 +854,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#ffdf20",
+          "value": "hsla(51, 100%, 56%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -862,7 +862,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#fcc800",
+          "value": "hsla(48, 100%, 49%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -870,7 +870,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#efb100",
+          "value": "hsla(44, 100%, 47%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -878,7 +878,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#d08700",
+          "value": "hsla(39, 100%, 41%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -886,7 +886,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#a65f00",
+          "value": "hsla(34, 100%, 33%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -894,7 +894,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#894b00",
+          "value": "hsla(33, 100%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -902,7 +902,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#733e0a",
+          "value": "hsla(30, 84%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -910,7 +910,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#432004",
+          "value": "hsla(27, 89%, 14%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -920,7 +920,7 @@
       "Blue": {
         "50": {
           "type": "color",
-          "value": "#eff6ff",
+          "value": "hsla(214, 100%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -928,7 +928,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#dbeafe",
+          "value": "hsla(214, 95%, 93%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -936,7 +936,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#bedbff",
+          "value": "hsla(213, 100%, 87%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -944,7 +944,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#8ec5ff",
+          "value": "hsla(211, 100%, 78%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -952,7 +952,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#51a2ff",
+          "value": "hsla(212, 100%, 66%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -960,7 +960,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#2b7fff",
+          "value": "hsla(216, 100%, 58%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -968,7 +968,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#155dfc",
+          "value": "hsla(221, 97%, 54%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -976,7 +976,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#1447e6",
+          "value": "hsla(225, 84%, 49%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -984,7 +984,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#193cb8",
+          "value": "hsla(227, 76%, 41%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -992,7 +992,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#1c398e",
+          "value": "hsla(225, 67%, 33%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1000,7 +1000,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#162456",
+          "value": "hsla(227, 59%, 21%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1010,7 +1010,7 @@
       "Violet": {
         "50": {
           "type": "color",
-          "value": "#f5f3ff",
+          "value": "hsla(250, 100%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1018,7 +1018,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#ede9fe",
+          "value": "hsla(251, 91%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1026,7 +1026,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#ddd6ff",
+          "value": "hsla(250, 100%, 92%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1034,7 +1034,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#c4b4ff",
+          "value": "hsla(253, 100%, 85%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1042,7 +1042,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#a684ff",
+          "value": "hsla(257, 100%, 76%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1050,7 +1050,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#8e51ff",
+          "value": "hsla(261, 100%, 66%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1058,7 +1058,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#7f22fe",
+          "value": "hsla(265, 99%, 56%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1066,7 +1066,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#7008e7",
+          "value": "hsla(268, 93%, 47%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1074,7 +1074,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#5d0ec0",
+          "value": "hsla(267, 86%, 40%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1082,7 +1082,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#4d179a",
+          "value": "hsla(265, 74%, 35%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1090,7 +1090,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#2f0d68",
+          "value": "hsla(262, 78%, 23%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1100,7 +1100,7 @@
       "Fuchsia": {
         "50": {
           "type": "color",
-          "value": "#fdf4ff",
+          "value": "hsla(289, 100%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1108,7 +1108,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#fae8ff",
+          "value": "hsla(287, 100%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1116,7 +1116,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#f6cfff",
+          "value": "hsla(289, 100%, 91%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1124,7 +1124,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#f4a8ff",
+          "value": "hsla(292, 100%, 83%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1132,7 +1132,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#ed6bff",
+          "value": "hsla(293, 100%, 71%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1140,7 +1140,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#e12afb",
+          "value": "hsla(293, 96%, 57%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1148,7 +1148,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#c800de",
+          "value": "hsla(294, 100%, 44%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1156,7 +1156,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#a800b7",
+          "value": "hsla(295, 100%, 36%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1164,7 +1164,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#8a0194",
+          "value": "hsla(296, 99%, 29%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1172,7 +1172,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#721378",
+          "value": "hsla(296, 73%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1180,7 +1180,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#4b004f",
+          "value": "hsla(297, 100%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1190,7 +1190,7 @@
       "Pink": {
         "50": {
           "type": "color",
-          "value": "#fdf2f8",
+          "value": "hsla(327, 73%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1198,7 +1198,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#fce7f3",
+          "value": "hsla(326, 78%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1206,7 +1206,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#fccee8",
+          "value": "hsla(326, 88%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1214,7 +1214,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#fda5d5",
+          "value": "hsla(327, 96%, 82%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1222,7 +1222,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#fb64b6",
+          "value": "hsla(327, 95%, 69%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1230,7 +1230,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#f6339a",
+          "value": "hsla(328, 92%, 58%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1238,7 +1238,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#e60076",
+          "value": "hsla(329, 100%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1246,7 +1246,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#c6005c",
+          "value": "hsla(332, 100%, 39%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1254,7 +1254,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#a3004c",
+          "value": "hsla(332, 100%, 32%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1262,7 +1262,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#861043",
+          "value": "hsla(334, 79%, 29%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1270,7 +1270,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#510424",
+          "value": "hsla(335, 91%, 17%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1280,7 +1280,7 @@
       "Emerald": {
         "50": {
           "type": "color",
-          "value": "#ecfdf5",
+          "value": "hsla(152, 81%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1288,7 +1288,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#d0fae5",
+          "value": "hsla(150, 81%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1296,7 +1296,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#a4f4cf",
+          "value": "hsla(152, 78%, 80%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1304,7 +1304,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#5ee9b5",
+          "value": "hsla(158, 76%, 64%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1312,7 +1312,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#00d492",
+          "value": "hsla(161, 100%, 42%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1320,7 +1320,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#00bc7d",
+          "value": "hsla(160, 100%, 37%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1328,7 +1328,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#009966",
+          "value": "hsla(160, 100%, 30%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1336,7 +1336,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#007a55",
+          "value": "hsla(162, 100%, 24%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1344,7 +1344,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#006045",
+          "value": "hsla(163, 100%, 19%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1352,7 +1352,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#004f3b",
+          "value": "hsla(165, 100%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1360,7 +1360,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#002c22",
+          "value": "hsla(166, 100%, 9%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1370,7 +1370,7 @@
       "Sky": {
         "50": {
           "type": "color",
-          "value": "#f0f9ff",
+          "value": "hsla(204, 100%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1378,7 +1378,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#dff2fe",
+          "value": "hsla(203, 94%, 94%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1386,7 +1386,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#b8e6fe",
+          "value": "hsla(201, 97%, 86%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1394,7 +1394,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#74d4ff",
+          "value": "hsla(199, 100%, 73%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1402,7 +1402,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#00bcff",
+          "value": "hsla(196, 100%, 50%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1410,7 +1410,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#00a6f4",
+          "value": "hsla(199, 100%, 48%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1418,7 +1418,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#0084d1",
+          "value": "hsla(202, 100%, 41%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1426,7 +1426,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#0069a8",
+          "value": "hsla(203, 100%, 33%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1434,7 +1434,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#00598a",
+          "value": "hsla(201, 100%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1442,7 +1442,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#024a70",
+          "value": "hsla(201, 96%, 22%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1450,7 +1450,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#052f4a",
+          "value": "hsla(203, 87%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1460,7 +1460,7 @@
       "Gray": {
         "50": {
           "type": "color",
-          "value": "#f9fafb",
+          "value": "hsla(210, 20%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1468,7 +1468,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f3f4f6",
+          "value": "hsla(220, 14%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1476,7 +1476,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e5e7eb",
+          "value": "hsla(220, 13%, 91%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1484,7 +1484,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#d1d5dc",
+          "value": "hsla(218, 14%, 84%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1492,7 +1492,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#99a1af",
+          "value": "hsla(218, 12%, 64%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1500,7 +1500,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#6a7282",
+          "value": "hsla(220, 10%, 46%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1508,7 +1508,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#4a5565",
+          "value": "hsla(216, 15%, 34%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1516,7 +1516,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#364153",
+          "value": "hsla(217, 21%, 27%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1524,7 +1524,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#1e2939",
+          "value": "hsla(216, 31%, 17%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1532,7 +1532,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#101828",
+          "value": "hsla(220, 43%, 11%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1540,7 +1540,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#030712",
+          "value": "hsla(224, 71%, 4%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1550,7 +1550,7 @@
       "Purple": {
         "50": {
           "type": "color",
-          "value": "#faf5ff",
+          "value": "hsla(270, 100%, 98%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1558,7 +1558,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#f3e8ff",
+          "value": "hsla(269, 100%, 95%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1566,7 +1566,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#e9d4ff",
+          "value": "hsla(269, 100%, 92%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1574,7 +1574,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#dab2ff",
+          "value": "hsla(271, 100%, 85%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1582,7 +1582,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#c27aff",
+          "value": "hsla(272, 100%, 74%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1590,7 +1590,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#ad46ff",
+          "value": "hsla(273, 100%, 64%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1598,7 +1598,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#9810fa",
+          "value": "hsla(275, 96%, 52%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1606,7 +1606,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#8200db",
+          "value": "hsla(276, 100%, 43%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1614,7 +1614,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#6e11b0",
+          "value": "hsla(275, 82%, 38%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1622,7 +1622,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#580f8b",
+          "value": "hsla(275, 81%, 30%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1630,7 +1630,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#3c0366",
+          "value": "hsla(275, 94%, 21%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1640,7 +1640,7 @@
       "Teal": {
         "50": {
           "type": "color",
-          "value": "#f0fdfa",
+          "value": "hsla(166, 76%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1648,7 +1648,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#cbfbf1",
+          "value": "hsla(168, 86%, 89%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1656,7 +1656,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#96f7e4",
+          "value": "hsla(168, 86%, 78%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1664,7 +1664,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#46ecd5",
+          "value": "hsla(172, 81%, 60%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1672,7 +1672,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#00d5be",
+          "value": "hsla(174, 100%, 42%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1680,7 +1680,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#00bba7",
+          "value": "hsla(174, 100%, 37%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1688,7 +1688,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#009689",
+          "value": "hsla(175, 100%, 29%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1696,7 +1696,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#00786f",
+          "value": "hsla(176, 100%, 24%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1704,7 +1704,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#005f5a",
+          "value": "hsla(177, 100%, 19%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1712,7 +1712,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#0b4f4a",
+          "value": "hsla(176, 76%, 18%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1720,7 +1720,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#022f2e",
+          "value": "hsla(179, 92%, 10%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1730,7 +1730,7 @@
       "Indigo": {
         "50": {
           "type": "color",
-          "value": "#eef2ff",
+          "value": "hsla(226, 100%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1738,7 +1738,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#e0e7ff",
+          "value": "hsla(226, 100%, 94%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1746,7 +1746,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#c6d2ff",
+          "value": "hsla(227, 100%, 89%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1754,7 +1754,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#a3b3ff",
+          "value": "hsla(230, 100%, 82%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1762,7 +1762,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#7c86ff",
+          "value": "hsla(235, 100%, 74%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1770,7 +1770,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#615fff",
+          "value": "hsla(241, 100%, 69%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1778,7 +1778,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#4f39f6",
+          "value": "hsla(247, 91%, 59%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1786,7 +1786,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#432dd7",
+          "value": "hsla(248, 68%, 51%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1794,7 +1794,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#372aac",
+          "value": "hsla(246, 61%, 42%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1802,7 +1802,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#312c85",
+          "value": "hsla(243, 50%, 35%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1810,7 +1810,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#1e1a4d",
+          "value": "hsla(245, 50%, 20%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1820,7 +1820,7 @@
       "Cyan": {
         "50": {
           "type": "color",
-          "value": "#ecfeff",
+          "value": "hsla(183, 100%, 96%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1828,7 +1828,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#cefafe",
+          "value": "hsla(185, 96%, 90%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1836,7 +1836,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#a2f4fd",
+          "value": "hsla(186, 96%, 81%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1844,7 +1844,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#53eafd",
+          "value": "hsla(187, 98%, 66%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1852,7 +1852,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#00d3f2",
+          "value": "hsla(188, 100%, 47%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1860,7 +1860,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#00b8db",
+          "value": "hsla(190, 100%, 43%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1868,7 +1868,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#0092b8",
+          "value": "hsla(192, 100%, 36%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1876,7 +1876,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#007595",
+          "value": "hsla(193, 100%, 29%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1884,7 +1884,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#005f78",
+          "value": "hsla(192, 100%, 24%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1892,7 +1892,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#104e64",
+          "value": "hsla(196, 72%, 23%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1900,7 +1900,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#053345",
+          "value": "hsla(197, 86%, 15%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1909,7 +1909,7 @@
       },
       "transparent": {
         "type": "color",
-        "value": "#ffffff00",
+        "value": "hsla(0, 0%, 100%, 0)",
         "description": "",
         "$extensions": {
           "mode": {}
@@ -1918,7 +1918,7 @@
       "Green": {
         "50": {
           "type": "color",
-          "value": "#f0fdf4",
+          "value": "hsla(138, 76%, 97%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1926,7 +1926,7 @@
         },
         "100": {
           "type": "color",
-          "value": "#dcfce7",
+          "value": "hsla(141, 84%, 93%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1934,7 +1934,7 @@
         },
         "200": {
           "type": "color",
-          "value": "#b9f8cf",
+          "value": "hsla(141, 82%, 85%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1942,7 +1942,7 @@
         },
         "300": {
           "type": "color",
-          "value": "#7bf1a8",
+          "value": "hsla(143, 81%, 71%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1950,7 +1950,7 @@
         },
         "400": {
           "type": "color",
-          "value": "#05df72",
+          "value": "hsla(150, 96%, 45%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1958,7 +1958,7 @@
         },
         "500": {
           "type": "color",
-          "value": "#00c951",
+          "value": "hsla(144, 100%, 39%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1966,7 +1966,7 @@
         },
         "600": {
           "type": "color",
-          "value": "#00a63e",
+          "value": "hsla(142, 100%, 33%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1974,7 +1974,7 @@
         },
         "700": {
           "type": "color",
-          "value": "#008236",
+          "value": "hsla(145, 100%, 25%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1982,7 +1982,7 @@
         },
         "800": {
           "type": "color",
-          "value": "#016630",
+          "value": "hsla(148, 98%, 20%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1990,7 +1990,7 @@
         },
         "900": {
           "type": "color",
-          "value": "#0d542b",
+          "value": "hsla(145, 73%, 19%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -1998,7 +1998,7 @@
         },
         "950": {
           "type": "color",
-          "value": "#052e16",
+          "value": "hsla(145, 80%, 10%, 1)",
           "description": "",
           "$extensions": {
             "mode": {}
@@ -2007,7 +2007,7 @@
       },
       "white": {
         "type": "color",
-        "value": "#ffffff",
+        "value": "hsla(0, 0%, 100%, 1)",
         "description": "",
         "$extensions": {
           "mode": {}
@@ -2312,13 +2312,13 @@
       "Typography": {
         "Dark": {
           "type": "color",
-          "value": "#ffffff",
+          "value": "hsla(0, 0%, 100%, 1)",
           "description": "",
           "$extensions": {
             "mode": {
-              "Light": "#ffffff",
-              "Dark": "#ffffff",
-              "High Contrast": "#ffffff"
+              "Light": "hsla(0, 0%, 100%, 1)",
+              "Dark": "hsla(0, 0%, 100%, 1)",
+              "High Contrast": "hsla(0, 0%, 100%, 1)"
             }
           }
         }
@@ -2400,14 +2400,14 @@
   "$extensions": {
     "tokens-bruecke-meta": {
       "useDTCGKeys": false,
-      "colorMode": "hex",
+      "colorMode": "hsla-css",
       "variableCollections": [
         "Core",
         "Theme",
         "Component",
         "Breakpoint"
       ],
-      "createdAt": "2025-07-19T00:38:44.717Z"
+      "createdAt": "2025-07-19T00:39:47.918Z"
     }
   }
 }
