@@ -2328,7 +2328,7 @@
   "Component": {
     "button-color-primary": {
       "type": "color",
-      "value": "{Core.Color.Purple.500}",
+      "value": "{Core.Color.Purple.900}",
       "description": "",
       "$extensions": {
         "mode": {}
@@ -2407,7 +2407,7 @@
         "Component",
         "Breakpoint"
       ],
-      "createdAt": "2025-07-19T00:41:10.667Z"
+      "createdAt": "2025-07-19T01:12:21.269Z"
     }
   }
 }
