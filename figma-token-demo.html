@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figma → Supernova → Style Dictionary Token Demo</title>
+    <title>Figma → TokensBrücke → Style Dictionary Token Demo</title>
     
     <!-- Load design tokens -->
-    <link rel="stylesheet" href="build/css/variables.css">
+    <link rel="stylesheet" href="build/css/nyulh-core.css">
+    <link rel="stylesheet" href="build/css/nyulh-theme.css">
+    <link rel="stylesheet" href="build/css/nyulh-components.css">
+    <link rel="stylesheet" href="build/css/nyulh-device-size.css">
     
     <style>
         /* Reset and base styles */
@@ -53,7 +56,7 @@
         
         /* The star of the show - our demo button */
         .demo-button {
-            background-color: var(--nyulh-core-color-purple-500);
+            background-color: var(--mt-component-button-color-primary);
             color: white;
             border: none;
             padding: 1.5rem 3rem;
@@ -135,7 +138,7 @@
             display: inline-block;
             margin-left: 1rem;
             vertical-align: middle;
-            background-color: var(--nyulh-core-color-purple-500, #ffa500);
+            background-color: var(--mt-component-button-color-primary, #ac47ff);
         }
         
         .flow-indicator {
@@ -244,7 +247,7 @@
         <div class="flow-indicator">
             <div class="flow-step">Figma</div>
             <div class="flow-arrow">→</div>
-            <div class="flow-step">Supernova</div>
+            <div class="flow-step">TokensBrücke</div>
             <div class="flow-arrow">→</div>
             <div class="flow-step">GitHub</div>
             <div class="flow-arrow">→</div>
@@ -257,7 +260,7 @@
             <div class="token-info">
                 <div class="token-item">
                     <div class="token-label">Token Name</div>
-                    <div class="token-value" id="tokenName">--nyulh-core-color-purple-500</div>
+                    <div class="token-value" id="tokenName">--mt-component-button-color-primary</div>
                 </div>
                 <div class="token-item">
                     <div class="token-label">Current Value</div>
@@ -266,7 +269,7 @@
                 </div>
                 <div class="token-item">
                     <div class="token-label">Source File</div>
-                    <div class="token-value">build/css/variables.css</div>
+                    <div class="token-value">build/css/nyulh-components.css</div>
                 </div>
                 <div class="token-item">
                     <div class="token-label">Last Updated</div>
@@ -282,8 +285,8 @@
             </div>
             <div class="instructions-content">
                 <strong>For Loom Recording:</strong><br>
-                1. Change the purple-500 token value in Figma<br>
-                2. Sync/export from Supernova to GitHub<br>
+                1. Change the button primary color token value in Figma<br>
+                2. Export from TokensBrücke to GitHub (creates PR)<br>
                 3. Wait for GitHub Actions to build new tokens<br>
                 4. Refresh this page to see the button color change<br>
                 5. The token value display will update automatically
@@ -295,8 +298,8 @@
         // Get computed CSS custom property value
         function getCurrentTokenValue() {
             const styles = getComputedStyle(document.documentElement);
-            const value = styles.getPropertyValue('--nyulh-core-color-purple-500').trim();
-            return value || '#ffa500'; // fallback
+            const value = styles.getPropertyValue('--mt-component-button-color-primary').trim();
+            return value || '#ac47ff'; // fallback
         }
         
         // Update token display
