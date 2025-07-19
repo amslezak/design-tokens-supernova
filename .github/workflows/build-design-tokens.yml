@@ -18,11 +18,16 @@ on:
 jobs:
   build-tokens:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
+        # Need full history for git operations
+        fetch-depth: 0
+        # Use GitHub token for authentication
         token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Setup Node.js
@@ -49,24 +54,105 @@ jobs:
         echo "Theme tokens:"
         head -n 10 build/css/nyulh-theme.css
 
-    - name: Commit and push changes
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    - name: Check for changes
+      id: changes
+      run: |
+        if [[ -n $(git status --porcelain build/) ]]; then
+          echo "changes=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in build/ directory"
+        else
+          echo "changes=false" >> $GITHUB_OUTPUT
+          echo "No changes in build/ directory"
+        fi
+
+    - name: Configure Git
+      if: steps.changes.outputs.changes == 'true' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+
+    - name: Commit and push changes
+      if: steps.changes.outputs.changes == 'true' && github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
+      run: |
         git add build/css/*.css
-        if git diff --staged --quiet; then
-          echo "No changes to commit"
-        else
-          git commit -m "Update design tokens CSS files
+        git commit -m "🤖 Auto-build design tokens
+
+        Generated from TokensBrücke exports:
+        - Core tokens: build/css/nyulh-core.css
+        - Theme tokens: build/css/nyulh-theme.css
+        - Component tokens: build/css/nyulh-components.css
+        - Device/breakpoint tokens: build/css/nyulh-device-size.css
+        
+        Triggered by: ${{ github.event.head_commit.message }}"
+        git push
+
+    - name: Create GitHub Release
+      if: steps.changes.outputs.changes == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: tokens-${{ github.run_number }}
+        release_name: TokensBrücke Design Tokens v${{ github.run_number }}
+        body: |
+          🎨 **Design Tokens Updated**
           
-          Auto-generated from design-tokens.json changes"
-          git push
-        fi
+          This release contains the latest design tokens generated from Figma via TokensBrücke.
+          
+          **Generated Files:**
+          - `build/css/nyulh-core.css` - Core primitive tokens (colors, spacing, typography)
+          - `build/css/nyulh-theme.css` - Semantic theme tokens with mode support
+          - `build/css/nyulh-components.css` - Component-specific tokens
+          - `build/css/nyulh-device-size.css` - Responsive and breakpoint tokens
+          
+          **Usage:**
+          ```html
+          <!-- Import all CSS files -->
+          <link rel="stylesheet" href="path/to/nyulh-core.css">
+          <link rel="stylesheet" href="path/to/nyulh-theme.css">
+          <link rel="stylesheet" href="path/to/nyulh-components.css">
+          <link rel="stylesheet" href="path/to/nyulh-device-size.css">
+          ```
+          
+          **CSS Variables:**
+          All tokens use the `--mt-` prefix (e.g., `var(--mt-core-color-slate-950)`)
+          
+          **Commit:** ${{ github.sha }}
+          **Triggered by:** ${{ github.event.head_commit.message }}
+        draft: false
+        prerelease: false
 
     - name: Upload build artifacts
+      if: steps.changes.outputs.changes == 'true'
       uses: actions/upload-artifact@v4
       with:
-        name: design-tokens-css
-        path: build/css/
+        name: design-tokens-css-${{ github.run_number }}
+        path: |
+          build/css/
+          config.json
+          design-tokens.json
         retention-days: 30
+
+    - name: Display build summary
+      run: |
+        echo "## 🎨 Design Tokens Build Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Build Status:** ✅ Success" >> $GITHUB_STEP_SUMMARY
+        echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "**Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Generated Files:**" >> $GITHUB_STEP_SUMMARY
+        echo "- Core Tokens: \`build/css/nyulh-core.css\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Theme Tokens: \`build/css/nyulh-theme.css\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Component Tokens: \`build/css/nyulh-components.css\`" >> $GITHUB_STEP_SUMMARY
+        echo "- Device/Breakpoint Tokens: \`build/css/nyulh-device-size.css\`" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        if [[ "${{ steps.changes.outputs.changes }}" == "true" ]]; then
+          echo "**Changes:** ✅ Token files updated" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ github.event_name }}" == "push" && "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "**Release:** 🚀 GitHub release created: tokens-${{ github.run_number }}" >> $GITHUB_STEP_SUMMARY
+          fi
+        else
+          echo "**Changes:** ℹ️ No token changes detected" >> $GITHUB_STEP_SUMMARY
+        fi
