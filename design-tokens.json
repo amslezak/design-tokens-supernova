@@ -2286,25 +2286,25 @@
       "Surface": {
         "Dark": {
           "type": "color",
-          "value": "{Core.Color.Slate.950.value}",
+          "value": "{Core.Color.Slate.950}",
           "description": "",
           "$extensions": {
             "mode": {
-              "Light": "{Core.Color.Slate.950.value}",
-              "Dark": "{Core.Color.Slate.50.value}",
-              "High Contrast": "{Core.Color.Slate.50.value}"
+              "Light": "{Core.Color.Slate.950}",
+              "Dark": "{Core.Color.Slate.50}",
+              "High Contrast": "{Core.Color.Slate.50}"
             }
           }
         },
         "White": {
           "type": "color",
-          "value": "{Core.Color.Slate.300.value}",
+          "value": "{Core.Color.Slate.300}",
           "description": "",
           "$extensions": {
             "mode": {
-              "Light": "{Core.Color.Slate.300.value}",
-              "Dark": "{Core.Color.Slate.950.value}",
-              "High Contrast": "{Core.Color.Slate.950.value}"
+              "Light": "{Core.Color.Slate.300}",
+              "Dark": "{Core.Color.Slate.950}",
+              "High Contrast": "{Core.Color.Slate.950}"
             }
           }
         }
@@ -2328,7 +2328,7 @@
   "Component": {
     "button-color-primary": {
       "type": "color",
-      "value": "{Core.Color.Purple.500.value}",
+      "value": "{Core.Color.Purple.500}",
       "description": "",
       "$extensions": {
         "mode": {}
@@ -2340,13 +2340,13 @@
       "Spacing": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.1.value}",
+          "value": "{Core.Number.1}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.1.value}",
-              "md": "{Core.Number.0.value}",
-              "sm": "{Core.Number.0.value}"
+              "xl": "{Core.Number.1}",
+              "md": "{Core.Number.0}",
+              "sm": "{Core.Number.0}"
             }
           }
         }
@@ -2354,13 +2354,13 @@
       "Layout": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.0.value}",
+          "value": "{Core.Number.0}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.0.value}",
-              "md": "{Core.Number.2.value}",
-              "sm": "{Core.Number.2.value}"
+              "xl": "{Core.Number.0}",
+              "md": "{Core.Number.2}",
+              "sm": "{Core.Number.2}"
             }
           }
         }
@@ -2369,13 +2369,13 @@
         "Size": {
           "xl": {
             "type": "dimension",
-            "value": "{Core.Number.0.value}",
+            "value": "{Core.Number.0}",
             "description": "",
             "$extensions": {
               "mode": {
-                "xl": "{Core.Number.0.value}",
-                "md": "{Core.Number.0.value}",
-                "sm": "{Core.Number.0.value}"
+                "xl": "{Core.Number.0}",
+                "md": "{Core.Number.0}",
+                "sm": "{Core.Number.0}"
               }
             }
           }
@@ -2384,13 +2384,13 @@
       "Radius": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.0.value}",
+          "value": "{Core.Number.0}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.0.value}",
-              "md": "{Core.Number.0.value}",
-              "sm": "{Core.Number.0.value}"
+              "xl": "{Core.Number.0}",
+              "md": "{Core.Number.0}",
+              "sm": "{Core.Number.0}"
             }
           }
         }
@@ -2407,7 +2407,7 @@
         "Component",
         "Breakpoint"
       ],
-      "createdAt": "2025-07-19T00:39:47.918Z"
+      "createdAt": "2025-07-19T00:41:10.667Z"
     }
   }
 }
