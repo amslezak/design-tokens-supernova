@@ -1,5 +1,5 @@
 {
-  "Core": {
+  "Core.old": {
     "Color": {
       "Amber": {
         "50": {
@@ -2281,30 +2281,30 @@
       }
     }
   },
-  "Theme": {
+  "Theme.old": {
     "Color": {
       "Surface": {
         "Dark": {
           "type": "color",
-          "value": "{Core.Color.Slate.950}",
+          "value": "{Core.old.Color.Slate.950}",
           "description": "",
           "$extensions": {
             "mode": {
-              "Light": "{Core.Color.Slate.950}",
-              "Dark": "{Core.Color.Slate.50}",
-              "High Contrast": "{Core.Color.Slate.50}"
+              "Light": "{Core.old.Color.Slate.950}",
+              "Dark": "{Core.old.Color.Slate.50}",
+              "High Contrast": "{Core.old.Color.Slate.50}"
             }
           }
         },
         "White": {
           "type": "color",
-          "value": "{Core.Color.Slate.300}",
+          "value": "{Core.old.Color.Slate.300}",
           "description": "",
           "$extensions": {
             "mode": {
-              "Light": "{Core.Color.Slate.300}",
-              "Dark": "{Core.Color.Slate.950}",
-              "High Contrast": "{Core.Color.Slate.950}"
+              "Light": "{Core.old.Color.Slate.300}",
+              "Dark": "{Core.old.Color.Slate.950}",
+              "High Contrast": "{Core.old.Color.Slate.950}"
             }
           }
         }
@@ -2325,28 +2325,28 @@
       }
     }
   },
-  "Component": {
+  "Component.old": {
     "button-color-primary": {
       "type": "color",
-      "value": "{Core.Color.Purple.200}",
+      "value": "{Core.old.Color.Purple.200}",
       "description": "",
       "$extensions": {
         "mode": {}
       }
     }
   },
-  "Breakpoint": {
+  "Breakpoint.old": {
     "Number": {
       "Spacing": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.1}",
+          "value": "{Core.old.Number.1}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.1}",
-              "md": "{Core.Number.0}",
-              "sm": "{Core.Number.0}"
+              "xl": "{Core.old.Number.1}",
+              "md": "{Core.old.Number.0}",
+              "sm": "{Core.old.Number.0}"
             }
           }
         }
@@ -2354,13 +2354,13 @@
       "Layout": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.0}",
+          "value": "{Core.old.Number.0}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.0}",
-              "md": "{Core.Number.2}",
-              "sm": "{Core.Number.2}"
+              "xl": "{Core.old.Number.0}",
+              "md": "{Core.old.Number.2}",
+              "sm": "{Core.old.Number.2}"
             }
           }
         }
@@ -2369,13 +2369,13 @@
         "Size": {
           "xl": {
             "type": "dimension",
-            "value": "{Core.Number.0}",
+            "value": "{Core.old.Number.0}",
             "description": "",
             "$extensions": {
               "mode": {
-                "xl": "{Core.Number.0}",
-                "md": "{Core.Number.0}",
-                "sm": "{Core.Number.0}"
+                "xl": "{Core.old.Number.0}",
+                "md": "{Core.old.Number.0}",
+                "sm": "{Core.old.Number.0}"
               }
             }
           }
@@ -2384,13 +2384,1149 @@
       "Radius": {
         "lg": {
           "type": "dimension",
-          "value": "{Core.Number.0}",
+          "value": "{Core.old.Number.0}",
           "description": "",
           "$extensions": {
             "mode": {
-              "xl": "{Core.Number.0}",
-              "md": "{Core.Number.0}",
-              "sm": "{Core.Number.0}"
+              "xl": "{Core.old.Number.0}",
+              "md": "{Core.old.Number.0}",
+              "sm": "{Core.old.Number.0}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "Core": {
+    "mt-core": {
+      "Spacing": {
+        "xs": {
+          "type": "dimension",
+          "value": "4px",
+          "description": "Extra small spacing - tight spacing, borders",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "8px",
+          "description": "Small spacing - small gaps, padding",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "16px",
+          "description": "Medium spacing - standard spacing",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "28px",
+          "description": "Large spacing - section spacing",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "32px",
+          "description": "Extra large spacing - large gaps",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "48px",
+          "description": "2X large spacing - major sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "3xl": {
+          "type": "dimension",
+          "value": "64px",
+          "description": "3X large spacing - page sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "4xl": {
+          "type": "dimension",
+          "value": "80px",
+          "description": "4X large spacing - hero sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "5xl": {
+          "type": "dimension",
+          "value": "96px",
+          "description": "5X large spacing - major layouts",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "BorderRadius": {
+        "sm": {
+          "type": "dimension",
+          "value": "4px",
+          "description": "Small radius - standard small radius",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "6px",
+          "description": "Medium radius - default radius",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "8px",
+          "description": "Large radius - cards, buttons",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "12px",
+          "description": "Extra large radius - larger components",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "16px",
+          "description": "2X large radius - major containers",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "full": {
+          "type": "dimension",
+          "value": "9999px",
+          "description": "Full radius - circular elements, pills",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "Duration": {
+        "fast": {
+          "type": "dimension",
+          "value": "150px",
+          "description": "Fast transition - micro-interactions",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "normal": {
+          "type": "dimension",
+          "value": "300px",
+          "description": "Normal transition - standard transitions",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "slow": {
+          "type": "dimension",
+          "value": "500px",
+          "description": "Slow transition - complex animations",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "Typography": {
+        "FontSize": {
+          "xs": {
+            "type": "dimension",
+            "value": "12px",
+            "description": "Extra small text - labels, captions",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "14px",
+            "description": "Small text - form labels, secondary content",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "base": {
+            "type": "dimension",
+            "value": "16px",
+            "description": "Base font size - body text, primary content",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "lg": {
+            "type": "dimension",
+            "value": "18px",
+            "description": "Large text - emphasis, large body text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "xl": {
+            "type": "dimension",
+            "value": "20px",
+            "description": "Extra large - card titles, subheadings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "2xl": {
+            "type": "dimension",
+            "value": "24px",
+            "description": "2X large - section headings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "3xl": {
+            "type": "dimension",
+            "value": "30px",
+            "description": "3X large - page titles",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "4xl": {
+            "type": "dimension",
+            "value": "36px",
+            "description": "4X large - display headings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "5xl": {
+            "type": "dimension",
+            "value": "48px",
+            "description": "5X large - hero text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "6xl": {
+            "type": "dimension",
+            "value": "60px",
+            "description": "6X large - marketing displays",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "FontWeight": {
+          "light": {
+            "type": "dimension",
+            "value": "300px",
+            "description": "Light weight - subtle emphasis",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "normal": {
+            "type": "dimension",
+            "value": "400px",
+            "description": "Normal weight - body text default",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "medium": {
+            "type": "dimension",
+            "value": "500px",
+            "description": "Medium weight - emphasis, labels",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "semibold": {
+            "type": "dimension",
+            "value": "600px",
+            "description": "Semibold - headings, important text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "bold": {
+            "type": "dimension",
+            "value": "700px",
+            "description": "Bold - strong emphasis",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "LineHeight": {
+          "tight": {
+            "type": "dimension",
+            "value": "1.25px",
+            "description": "Tight line height - headlines, display text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "normal": {
+            "type": "dimension",
+            "value": "1.5px",
+            "description": "Normal line height - body text default",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "relaxed": {
+            "type": "dimension",
+            "value": "1.625px",
+            "description": "Relaxed line height - long-form content",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      },
+      "Color": {
+        "Healthcare": {
+          "blue50": {
+            "type": "string",
+            "value": "#f0f9ff",
+            "description": "Healthcare blue 50",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue100": {
+            "type": "string",
+            "value": "#e0f2fe",
+            "description": "Healthcare blue 100",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue500": {
+            "type": "string",
+            "value": "#0ea5e9",
+            "description": "Healthcare primary blue",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue600": {
+            "type": "string",
+            "value": "#0284c7",
+            "description": "Healthcare blue 600",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "purple500": {
+            "type": "string",
+            "value": "#a855f7",
+            "description": "NYU purple brand",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "purple600": {
+            "type": "string",
+            "value": "#9333ea",
+            "description": "NYU purple 600",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json": {
+    "breakpoint": {
+      "screen": {
+        "xs": {
+          "type": "dimension",
+          "value": "475px",
+          "description": "Extra small screen breakpoint - mobile landscape",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "640px",
+          "description": "Small screen breakpoint - small tablets",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "768px",
+          "description": "Medium screen breakpoint - tablets",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "1024px",
+          "description": "Large screen breakpoint - small desktops",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "1280px",
+          "description": "Extra large screen breakpoint - large desktops",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "1536px",
+          "description": "2X large screen breakpoint - extra large screens",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "container": {
+        "xs": {
+          "type": "string",
+          "value": "100%",
+          "description": "Extra small container width",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "640px",
+          "description": "Small container width",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "768px",
+          "description": "Medium container width",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "1024px",
+          "description": "Large container width",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "1280px",
+          "description": "Extra large container width",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "1536px",
+          "description": "2X large container width",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      }
+    },
+    "component": {
+      "card": {
+        "background": {
+          "type": "string",
+          "value": "#ffffff",
+          "description": "Card background color",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "border": {
+          "type": "string",
+          "value": "#e2e8f0",
+          "description": "Card border color",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "spacing": {
+          "padding": {
+            "type": "dimension",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.spacing.xl}",
+            "description": "Card internal padding",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      },
+      "button": {
+        "primary": {
+          "background": {
+            "type": "string",
+            "value": "#000000",
+            "description": "Primary button background",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "text": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Primary button text",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "secondary": {
+          "background": {
+            "type": "string",
+            "value": "transparent",
+            "description": "Secondary button background",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "text": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.text.primary}",
+            "description": "Secondary button text",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "spacing": {
+          "paddingX": {
+            "type": "dimension",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.spacing.lg}",
+            "description": "Button horizontal padding",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "paddingY": {
+            "type": "dimension",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.spacing.sm}",
+            "description": "Button vertical padding",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      },
+      "healthcare": {
+        "header": {
+          "background": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Healthcare header background",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "card": {
+          "background": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Healthcare card background",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "hero": {
+          "background": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.healthcare.background}",
+            "description": "Healthcare hero background",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "status": {
+          "stable": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.feedback.success}",
+            "description": "Patient stable status color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "critical": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.feedback.error}",
+            "description": "Patient critical status color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "warning": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.feedback.warning}",
+            "description": "Patient warning status color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "improving": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.theme.color.feedback.info}",
+            "description": "Patient improving status color",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      }
+    },
+    "core": {
+      "spacing": {
+        "xs": {
+          "type": "dimension",
+          "value": "4px",
+          "description": "Extra small spacing - tight spacing, borders",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "sm": {
+          "type": "dimension",
+          "value": "8px",
+          "description": "Small spacing - small gaps, padding",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "16px",
+          "description": "Medium spacing - standard spacing",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "24px",
+          "description": "Large spacing - section spacing",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "32px",
+          "description": "Extra large spacing - large gaps",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "48px",
+          "description": "2X large spacing - major sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "3xl": {
+          "type": "dimension",
+          "value": "64px",
+          "description": "3X large spacing - page sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "4xl": {
+          "type": "dimension",
+          "value": "80px",
+          "description": "4X large spacing - hero sections",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "5xl": {
+          "type": "dimension",
+          "value": "96px",
+          "description": "5X large spacing - major layouts",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "border-radius": {
+        "sm": {
+          "type": "dimension",
+          "value": "4px",
+          "description": "Small radius - standard small radius",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "md": {
+          "type": "dimension",
+          "value": "6px",
+          "description": "Medium radius - default radius",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "lg": {
+          "type": "dimension",
+          "value": "8px",
+          "description": "Large radius - cards, buttons",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "xl": {
+          "type": "dimension",
+          "value": "12px",
+          "description": "Extra large radius - larger components",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "2xl": {
+          "type": "dimension",
+          "value": "16px",
+          "description": "2X large radius - major containers",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "full": {
+          "type": "dimension",
+          "value": "9999px",
+          "description": "Full radius - circular elements, pills",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "duration": {
+        "fast": {
+          "type": "dimension",
+          "value": "150px",
+          "description": "Fast transition - micro-interactions",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "normal": {
+          "type": "dimension",
+          "value": "300px",
+          "description": "Normal transition - standard transitions",
+          "$extensions": {
+            "mode": {}
+          }
+        },
+        "slow": {
+          "type": "dimension",
+          "value": "500px",
+          "description": "Slow transition - complex animations",
+          "$extensions": {
+            "mode": {}
+          }
+        }
+      },
+      "typography": {
+        "font-size": {
+          "xs": {
+            "type": "dimension",
+            "value": "12px",
+            "description": "Extra small text - labels, captions",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "sm": {
+            "type": "dimension",
+            "value": "14px",
+            "description": "Small text - form labels, secondary content",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "base": {
+            "type": "dimension",
+            "value": "16px",
+            "description": "Base font size - body text, primary content",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "lg": {
+            "type": "dimension",
+            "value": "18px",
+            "description": "Large text - emphasis, large body text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "xl": {
+            "type": "dimension",
+            "value": "20px",
+            "description": "Extra large - card titles, subheadings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "2xl": {
+            "type": "dimension",
+            "value": "24px",
+            "description": "2X large - section headings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "3xl": {
+            "type": "dimension",
+            "value": "30px",
+            "description": "3X large - page titles",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "4xl": {
+            "type": "dimension",
+            "value": "36px",
+            "description": "4X large - display headings",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "5xl": {
+            "type": "dimension",
+            "value": "48px",
+            "description": "5X large - hero text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "6xl": {
+            "type": "dimension",
+            "value": "60px",
+            "description": "6X large - marketing displays",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "font-weight": {
+          "light": {
+            "type": "dimension",
+            "value": "300px",
+            "description": "Light weight - subtle emphasis",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "normal": {
+            "type": "dimension",
+            "value": "400px",
+            "description": "Normal weight - body text default",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "medium": {
+            "type": "dimension",
+            "value": "500px",
+            "description": "Medium weight - emphasis, labels",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "semibold": {
+            "type": "dimension",
+            "value": "600px",
+            "description": "Semibold - headings, important text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "bold": {
+            "type": "dimension",
+            "value": "700px",
+            "description": "Bold - strong emphasis",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "line-height": {
+          "tight": {
+            "type": "dimension",
+            "value": "1.25px",
+            "description": "Tight line height - headlines, display text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "normal": {
+            "type": "dimension",
+            "value": "1.5px",
+            "description": "Normal line height - body text default",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "relaxed": {
+            "type": "dimension",
+            "value": "1.625px",
+            "description": "Relaxed line height - long-form content",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      },
+      "color": {
+        "healthcare": {
+          "blue-50": {
+            "type": "string",
+            "value": "#f0f9ff",
+            "description": "Healthcare blue 50",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue-100": {
+            "type": "string",
+            "value": "#e0f2fe",
+            "description": "Healthcare blue 100",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue-500": {
+            "type": "string",
+            "value": "#0ea5e9",
+            "description": "Healthcare primary blue",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "blue-600": {
+            "type": "string",
+            "value": "#0284c7",
+            "description": "Healthcare blue 600",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "purple-500": {
+            "type": "string",
+            "value": "#a855f7",
+            "description": "NYU purple brand",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "purple-600": {
+            "type": "string",
+            "value": "#9333ea",
+            "description": "NYU purple 600",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        }
+      }
+    },
+    "theme": {
+      "color": {
+        "brand": {
+          "primary": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.purple-500}",
+            "description": "Primary brand color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "secondary": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.blue-500}",
+            "description": "Secondary brand color",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "feedback": {
+          "success": {
+            "type": "string",
+            "value": "#10b981",
+            "description": "Success state color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "warning": {
+            "type": "string",
+            "value": "#f59e0b",
+            "description": "Warning state color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "error": {
+            "type": "string",
+            "value": "#ef4444",
+            "description": "Error state color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "info": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.blue-500}",
+            "description": "Information state color",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "surface": {
+          "primary": {
+            "type": "string",
+            "value": "#f8fafc",
+            "description": "Primary surface background",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "secondary": {
+            "type": "string",
+            "value": "#f1f5f9",
+            "description": "Secondary surface background",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "elevated": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Elevated surface background",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "text": {
+          "primary": {
+            "type": "string",
+            "value": "#0f172a",
+            "description": "Primary text color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "secondary": {
+            "type": "string",
+            "value": "#475569",
+            "description": "Secondary text color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "muted": {
+            "type": "string",
+            "value": "#94a3b8",
+            "description": "Muted text color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "inverse": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Inverse text color",
+            "$extensions": {
+              "mode": {}
+            }
+          }
+        },
+        "healthcare": {
+          "primary": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.blue-500}",
+            "description": "Healthcare primary blue",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "secondary": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.purple-500}",
+            "description": "NYU purple brand color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "background": {
+            "type": "string",
+            "value": "{breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json.core.color.healthcare.blue-50}",
+            "description": "Healthcare light blue background",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "surface": {
+            "type": "string",
+            "value": "#ffffff",
+            "description": "Healthcare surface color",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "text": {
+            "type": "string",
+            "value": "#334155",
+            "description": "Healthcare primary text",
+            "$extensions": {
+              "mode": {}
+            }
+          },
+          "textLight": {
+            "type": "string",
+            "value": "#64748b",
+            "description": "Healthcare secondary text",
+            "$extensions": {
+              "mode": {}
             }
           }
         }
@@ -2402,12 +3538,14 @@
       "useDTCGKeys": false,
       "colorMode": "hsla-css",
       "variableCollections": [
+        "Core.old",
+        "Theme.old",
+        "Component.old",
+        "Breakpoint.old",
         "Core",
-        "Theme",
-        "Component",
-        "Breakpoint"
+        "breakpoint-collection.json, component-collection.json, core-collection.json, theme-collection.json"
       ],
-      "createdAt": "2025-07-19T01:21:43.172Z"
+      "createdAt": "2025-07-22T15:27:30.713Z"
     }
   }
 }
